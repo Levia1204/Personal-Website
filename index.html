@@ -8,15 +8,35 @@
 <title>Levia Zeng | Business Analyst Portfolio</title>
 <style>
 /* 配色在 :root 修改；各板块文字在下方 HTML 中修改。 */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
-  --paper:#f7f6f0;
-  --ink:#263e36;
-  --muted:#687369;
-  --line:#d9ddd1;
-  --sage:#e6e9da;
-  --serif:'Libre Caslon Display',Georgia,serif
+  /* ===== 配色：想换颜色，只需要改这一块 =====
+     当前方案 A：深绿墨色 + 紫色点缀（取自 Aurora 赛车的绿紫涂装） */
+  --paper:#f6f6f2;       /* 页面背景 */
+  --card:#fcfcfa;        /* 卡片背景 */
+  --ink:#17302a;         /* 标题、重点文字 */
+  --body:#44544e;        /* 正文 */
+  --muted:#58655f;       /* 次要文字：标签、年份、引用 */
+  --line:#d9ddd6;        /* 分隔线 */
+  --line-strong:#b9c4bd; /* 链接下划线、装饰线 */
+  --accent:#5a3fd0;      /* 点缀色：斜体标题、悬停、聚焦 */
+  --accent-soft:#b9ade8; /* 点缀色的浅色版：卡片悬停边框 */
+  --tint:#e3eae5;        /* 卡片插图底色（4 种） */
+  --tint-2:#d9e5de;
+  --tint-3:#e6e4f0;
+  --tint-4:#e5e9e5;
+  --serif:'Source Serif 4',Georgia,'Songti SC','Noto Serif SC',serif
+
+  /* 备选方案 B：深海军蓝 + 青蓝色（把上面对应的值替换成下面的即可）
+     --paper:#f5f7fa; --card:#ffffff; --ink:#14233c; --body:#3f4c60; --muted:#566275;
+     --line:#dce2ea; --line-strong:#b8c3d1; --accent:#0f6e8c; --accent-soft:#9cc7d6;
+     --tint:#e6ecf3; --tint-2:#dbe7ef; --tint-3:#e8e9f2; --tint-4:#e9edf1;
+
+     备选方案 C：保留原来的绿色（已加深文字，提高可读性）
+     --paper:#f7f6f0; --card:#fcfcf8; --ink:#263e36; --body:#4f5b53; --muted:#5d6a5e;
+     --line:#d9ddd1; --line-strong:#bec6ab; --accent:#5f6f45; --accent-soft:#aeb99c;
+     --tint:#e6e9da; --tint-2:#d9e4dd; --tint-3:#e6dfd2; --tint-4:#e1e4db; */
 }
 
 * {
@@ -32,7 +52,7 @@ body {
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font:15px/1.7 'DM Sans',Arial,sans-serif
+  font:15px/1.7 'DM Sans','PingFang SC','Microsoft YaHei',Arial,sans-serif
 }
 
 a {
@@ -41,11 +61,11 @@ a {
 }
 
 a:hover {
-  color:#728157
+  color:var(--accent)
 }
 
 a:focus-visible {
-  outline:2px solid #728157;
+  outline:2px solid var(--accent);
   outline-offset:5px
 }
 
@@ -64,12 +84,12 @@ a:focus-visible {
 
 .brand {
   font:32px/1 var(--serif);
-  letter-spacing:-1px
+  letter-spacing:-.5px
 }
 
 .brand span {
   display:block;
-  font:8px/1.5 'DM Sans',sans-serif;
+  font:10px/1.5 'DM Sans',sans-serif;
   letter-spacing:2px;
   margin-top:10px
 }
@@ -120,18 +140,18 @@ section {
 
 h1 {
   font:64px/1.06 var(--serif);
-  letter-spacing:-2px;
+  letter-spacing:-1px;
   margin:0 0 25px
 }
 
 em {
   font-weight:400;
-  color:#7b895e
+  color:var(--accent)
 }
 
 .about p {
   max-width:590px;
-  color:#59655b;
+  color:var(--body);
   font-size:16px;
   line-height:1.8
 }
@@ -141,7 +161,7 @@ em {
 }
 
 .about-meta {
-  font-size:9px;
+  font-size:11px;
   letter-spacing:1.7px;
   margin-top:32px;
   color:var(--muted)
@@ -149,7 +169,7 @@ em {
 
 .about-art {
   height:300px;
-  background:var(--sage);
+  background:var(--tint);
   border-radius:48% 48% 2px 2px;
   position:relative;
   display:flex;
@@ -161,14 +181,14 @@ em {
 .monogram {
   font:150px var(--serif);
   z-index:1;
-  letter-spacing:-12px
+  letter-spacing:-8px
 }
 
 .orbit {
   position:absolute;
   width:220px;
   height:240px;
-  border:1px solid #bec6ab;
+  border:1px solid var(--line-strong);
   border-radius:50%;
   transform:rotate(30deg)
 }
@@ -177,7 +197,7 @@ em {
   content:'';
   position:absolute;
   inset:15px -30px;
-  border:1px solid #bec6ab;
+  border:1px solid var(--line-strong);
   border-radius:50%;
   transform:rotate(65deg)
 }
@@ -185,7 +205,7 @@ em {
 .about-art .art-caption {
   position:absolute;
   bottom:24px;
-  font-size:8px
+  font-size:10px
 }
 
 .section-heading {
@@ -219,7 +239,7 @@ h2 {
 
 .card {
   border:1px solid var(--line);
-  background:#fcfcf8;
+  background:var(--card);
   border-radius:3px;
   overflow:hidden;
   display:flex;
@@ -229,20 +249,20 @@ h2 {
 
 .card:hover {
   transform:translateY(-3px);
-  border-color:#aeb99c
+  border-color:var(--accent-soft)
 }
 
 .field {
   padding:16px 20px;
   line-height:1.5;
   min-height:48px;
-  font-size:9px;
-  color:#5e6b53
+  font-size:11px;
+  color:var(--muted)
 }
 
 .card-art {
   height:170px;
-  background:var(--sage);
+  background:var(--tint);
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -253,11 +273,11 @@ h2 {
 
 .art-main {
   font:72px/1 var(--serif);
-  letter-spacing:-3px
+  letter-spacing:-1px
 }
 
 .art-caption {
-  font-size:8px;
+  font-size:10px;
   letter-spacing:2px;
   margin-top:16px
 }
@@ -269,7 +289,7 @@ h2 {
 }
 
 .tennis {
-  background:#d9e0ce
+  background:var(--tint-4)
 }
 
 .tennis:before,.tennis:after {
@@ -277,7 +297,7 @@ h2 {
   position:absolute;
   width:140px;
   height:140px;
-  border:1px solid #9da98d;
+  border:1px solid var(--line-strong);
   border-radius:50%;
   left:-80px
 }
@@ -288,7 +308,7 @@ h2 {
 }
 
 .climate {
-  background:#d9e4dd
+  background:var(--tint-2)
 }
 
 .climate .art-main {
@@ -296,7 +316,7 @@ h2 {
 }
 
 .cesim {
-  background:#e6dfd2
+  background:var(--tint-3)
 }
 
 .cesim .art-main {
@@ -304,7 +324,7 @@ h2 {
 }
 
 .negotiation {
-  background:#e1e4db
+  background:var(--tint-3)
 }
 
 .card-body {
@@ -316,14 +336,14 @@ h2 {
 
 h3 {
   font:29px/1.15 var(--serif);
-  letter-spacing:-.4px;
+  letter-spacing:-.2px;
   margin:0 0 14px
 }
 
 .card p {
   font-size:13px;
   line-height:1.8;
-  color:#5f695f;
+  color:var(--body);
   margin:0 0 23px
 }
 
@@ -332,8 +352,8 @@ h3 {
 }
 
 .meta {
-  font-size:9px;
-  color:#748066;
+  font-size:11px;
+  color:var(--muted);
   display:block;
   margin-bottom:13px
 }
@@ -342,12 +362,16 @@ h3 {
   display:flex;
   flex-wrap:wrap;
   gap:12px 23px;
-  font-size:11px
+  font-size:12px
 }
 
 .links a {
-  border-bottom:1px solid #bdc5b0;
+  border-bottom:1px solid var(--line-strong);
   padding-bottom:2px
+}
+
+.links a:hover {
+  border-color:var(--accent)
 }
 
 .links span {
@@ -362,7 +386,7 @@ h3 {
 }
 
 .publication-mark {
-  background:#e8e3d8;
+  background:var(--tint-3);
   padding:35px;
   font:44px/1.1 var(--serif);
   min-height:240px;
@@ -372,7 +396,7 @@ h3 {
 }
 
 .publication-mark span {
-  font:9px 'DM Sans',sans-serif;
+  font:11px 'DM Sans','PingFang SC','Microsoft YaHei',sans-serif;
   letter-spacing:2px;
   margin-top:24px
 }
@@ -384,18 +408,20 @@ h3 {
 }
 
 .publication h3 {
-  font-size:34px
+  font-size:27px;
+  line-height:1.25;
+  letter-spacing:0
 }
 
 .publication p {
   font-size:14px;
-  color:#5f695f;
+  color:var(--body);
   max-width:670px
 }
 
 .publication .citation {
-  font-size:11px;
-  color:#7a8177;
+  font-size:12px;
+  color:var(--muted);
   line-height:1.9
 }
 
@@ -409,7 +435,139 @@ h3 {
   width:100%;
   height:270px;
   object-fit:contain;
-  background:#eff0e9
+  background:var(--tint-4)
+}
+
+/* ===== 可交互图片轮播（Formula / Baja 卡片）=====
+   只有 1 张照片时外观和原来完全一样；添加第 2 张及以上时自动出现左右箭头和切换标签。 */
+.gallery {
+  --stage-h:270px;
+  position:relative;
+  background:var(--tint-4)
+}
+
+.g-slides {
+  display:grid
+}
+
+.slide {
+  grid-area:1/1;
+  margin:0;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .3s,visibility .3s
+}
+
+.slide.is-active {
+  opacity:1;
+  visibility:visible
+}
+
+.slide .race-photo {
+  display:block;
+  height:var(--stage-h)
+}
+
+.slide figcaption {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px 18px;
+  padding:12px 20px;
+  background:var(--card);
+  border-top:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted)
+}
+
+.g-name {
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink)
+}
+
+.g-stats {
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 16px;
+  margin:0;
+  padding:0;
+  list-style:none
+}
+
+.g-stats b {
+  margin-left:4px;
+  font-weight:600;
+  color:var(--ink)
+}
+
+.g-btn {
+  position:absolute;
+  top:calc(var(--stage-h)/2 - 18px);
+  width:36px;
+  height:36px;
+  padding:0 0 3px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:rgba(252,252,250,.92);
+  color:var(--ink);
+  font:22px/1 'DM Sans',sans-serif;
+  cursor:pointer
+}
+
+.g-prev {
+  left:12px
+}
+
+.g-next {
+  right:12px
+}
+
+.g-btn:hover {
+  border-color:var(--accent-soft);
+  color:var(--accent)
+}
+
+.g-btn:focus-visible,.g-tab:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:3px
+}
+
+.g-tabs {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:12px 20px;
+  background:var(--card);
+  border-top:1px solid var(--line)
+}
+
+.g-tab {
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--muted);
+  font:600 11px/1 'DM Sans',sans-serif;
+  letter-spacing:.8px;
+  cursor:pointer
+}
+
+.g-tab:hover {
+  border-color:var(--accent-soft)
+}
+
+.g-tab[aria-current="true"] {
+  background:var(--ink);
+  border-color:var(--ink);
+  color:var(--paper)
+}
+
+.gallery.is-single .g-btn,.gallery.is-single .g-tabs {
+  display:none
 }
 
 .racing-card .card-body {
@@ -474,6 +632,11 @@ footer div {
   font-size:12px
 }
 
+/* 衬线标题统一使用中等字重，比原来的细体更柔和易读 */
+h1,h2,h3,.brand,.monogram,.art-main,.publication-mark {
+  font-weight:500
+}
+
 @media(max-width:1240px) {
   .site-header,main,footer {
   margin-left:35px;
@@ -505,8 +668,8 @@ h1 {
   gap:25px
 }
 
-.race-photo {
-  height:220px
+.gallery {
+  --stage-h:220px
 }
 
 
@@ -608,11 +771,11 @@ h2 {
 }
 
 .publication h3 {
-  font-size:30px
+  font-size:24px
 }
 
-.race-photo {
-  height:230px
+.gallery {
+  --stage-h:230px
 }
 
 footer {
@@ -636,7 +799,7 @@ footer {
   scroll-behavior:auto
 }
 
-.card {
+.card,.slide {
   transition:none
 }
 
@@ -666,9 +829,9 @@ footer {
 <div>
 <div class="eyebrow">01 / ABOUT ME</div>
 <h1>Hi, I’m Levia.<br>
-<em>Curious by nature.</em>
+<em>From Data to Insights.</em>
 </h1>
-<p>I’m a Master of Business Analytics student at UBC Sauder, with a background in finance and consumer research. I’m pursuing Business Analyst opportunities, bringing together analytical thinking, clear communication, and a little racing spirit.</p>
+<p>I’m a Master of Business Analytics student at UBC Sauder, with a background in International Business and International Finance. I’m pursuing Business Analyst opportunities, bringing together analytical thinking, clear communication, and a little racing spirit.</p>
 <div class="links">
 <a href="Levia-Zeng-Resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span>
 </a>
@@ -702,7 +865,7 @@ footer {
 </div>
 <div class="card-body">
 <h3>NYC’s Hidden Rat Hotspots</h3>
-<p>Compared rat complaints with inspection findings across New York City. I created the Queens and Mitigation Zones visualizations, report, and presentation.</p>
+<p>Compared rat complaints with inspection findings across New York City’s 59 community districts to identify hotspots. I built the Queens and Mitigation Zones visualizations and wrote the report and presentation.</p>
 <div class="card-bottom">
 <span class="meta">UBC Sauder · 2026</span>
 <div class="links">
@@ -715,53 +878,16 @@ footer {
 </div>
 </article>
 <article class="card">
-<div class="field">Mathematical Modeling</div>
-<div class="card-art tennis">
-<span class="art-main">MCM</span>
-<span class="art-caption">THE MOMENTUM OF A MATCH</span>
-</div>
-<div class="card-body">
-<h3>Momentum in Tennis</h3>
-<p>Modeled momentum and compared approaches to understanding player advantage. I contributed the modeling approach, visualizations, and paper writing.</p>
-<div class="card-bottom">
-<span class="meta">MCM · Honorable Mention · 2024</span>
-<div class="links">
-<a href="documents/tennis-paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span>
-</a>
-</div>
-</div>
-</div>
-</article>
-<article class="card">
-<div class="field">Marketing & Consumer Insights</div>
-<div class="card-art comb">
-<img src="assets/comb-pro.jpg" alt="Comb Pro product concept" loading="lazy">
-</div>
-<div class="card-body">
-<h3>L’Oréal Brandstorm · Comb Pro</h3>
-<p>Explored a connected hair-care concept through consumer needs and market positioning. I focused on market analysis.</p>
-<div class="card-bottom">
-<span class="meta">Mainland China Top 200 · 2024</span>
-<div class="links">
-<a href="documents/comb-pro.pdf" target="_blank" rel="noopener">View concept <span aria-hidden="true">↗</span>
-</a>
-<a href="https://youtu.be/FNUZM60wHyg" target="_blank" rel="noopener">Watch pitch <span aria-hidden="true">↗</span>
-</a>
-</div>
-</div>
-</div>
-</article>
-<article class="card">
-<div class="field">Climate Finance</div>
+<div class="field">Project Finance</div>
 <div class="card-art climate">
 <span class="art-main">↗</span>
 <span class="art-caption">FINANCING CARBON REMOVAL</span>
 </div>
 <div class="card-body">
 <h3>Deep Sky One</h3>
-<p>Explored financing for a carbon-removal project through revenue assumptions, capital structure, and cash flows. I worked on the financial model and financing analysis.</p>
+<p>Built the financing model for Deep Sky One, a carbon-removal project. I estimated the cost of capital with comparable-company beta, CAPM, and WACC, valued the project with NPV, and structured an SPV to size its financing needs.</p>
 <div class="card-bottom">
-<span class="meta">Climate Innovation Hackathon · 2026</span>
+<span class="meta">Climate Innovation Challenge · DeepSky &amp; PwC · 2026</span>
 <div class="links">
 <a href="documents/deep-sky-deck.pptx" target="_blank" rel="noopener">View presentation <span aria-hidden="true">↗</span>
 </a>
@@ -779,10 +905,47 @@ footer {
 </div>
 <div class="card-body">
 <h3>Cesim Elite</h3>
-<p>Used business simulation data to support team decisions. I contributed decision analysis, case analysis, and the presentation.</p>
+<p>Competed as the team’s analyst in a business simulation, using data to drive strategic decisions. I handled the decision analysis and case analysis, and presented our results.</p>
 <div class="card-bottom">
-<span class="meta">National Second Prize · 2024</span>
+<span class="meta">16th Cesim Elite National Finals · Second Prize · 2024</span>
 <div class="links">
+</div>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="field">Marketing & Consumer Insights</div>
+<div class="card-art comb">
+<img src="assets/comb-pro.jpg" alt="Comb Pro product concept" loading="lazy">
+</div>
+<div class="card-body">
+<h3>L’Oréal Brandstorm · Comb Pro</h3>
+<p>Pitched Comb Pro, a connected hair-care concept built around consumer needs and market positioning. I was responsible for the market analysis.</p>
+<div class="card-bottom">
+<span class="meta">Mainland China Top 200 · 2024</span>
+<div class="links">
+<a href="documents/comb-pro.pdf" target="_blank" rel="noopener">View concept <span aria-hidden="true">↗</span>
+</a>
+<a href="https://youtu.be/FNUZM60wHyg" target="_blank" rel="noopener">Watch pitch <span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
+</div>
+</article>
+<article class="card">
+<div class="field">Mathematical Modeling</div>
+<div class="card-art tennis">
+<span class="art-main">MCM</span>
+<span class="art-caption">THE MOMENTUM OF A MATCH</span>
+</div>
+<div class="card-body">
+<h3>Momentum in Tennis</h3>
+<p>Built a model of momentum in tennis for the Mathematical Contest in Modeling, measuring which player holds the advantage and comparing alternative approaches. I was responsible for the modeling, visualizations, and paper writing.</p>
+<div class="card-bottom">
+<span class="meta">MCM · Honorable Mention · 2024</span>
+<div class="links">
+<a href="documents/tennis-paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span>
+</a>
 </div>
 </div>
 </div>
@@ -795,7 +958,7 @@ footer {
 </div>
 <div class="card-body">
 <h3>National Business Elite Challenge</h3>
-<p>Competed in the national finals of the business negotiation track. Our team received a national second prize.</p>
+<p>Competed in the business negotiation track and advanced to the national finals, where our team won second prize.</p>
 <div class="card-bottom">
 <span class="meta">National Second Prize · 2023</span>
 <div class="links">
@@ -818,12 +981,14 @@ footer {
 <span>社会治理 · 2024</span>
 </div>
 <div>
-<div class="field">Social Research · Elderly Care</div>
-<h3>Participation in Elderly-Care Time Banks</h3>
-<p>Co-authored a study of factors influencing time-bank participation in rural Guangdong. Published in the Chinese journal <em>Social Governance Review (社会治理)</em>.</p>
+<div class="field">Published Research · Elderly Care</div>
+<h3>Factors Influencing the Willingness to Participate in Time Banks in Elderly Care Services: A Case Study of Rural R County in Guangdong Province</h3>
+<p>Co-authored a survey study of 422 villagers in rural Guangdong on what drives willingness to join a time bank, a mutual-aid scheme in which volunteers earn credits for elderly-care service. Correlation and multiple regression analysis linked life satisfaction, life evaluation, and understanding of the program’s risks to greater willingness, while trust and views of the village showed no significant effect. Published in the Chinese journal <em>Social Governance Review (社会治理)</em>.</p>
 <p class="citation" lang="zh">魏冰玲、吴金兴、曾巧彤 · 2024年第4期，63–79页<br>养老服务中时间银行参与意愿的影响因素研究——以广东省R县农村为例</p>
 <div class="links">
 <a href="https://doi.org/10.16775/j.cnki.10-1285/d.2024.04.006" target="_blank" rel="noopener">Read journal article <span aria-hidden="true">↗</span>
+</a>
+<a href="documents/time-bank-paper.pdf" target="_blank" rel="noopener">Read paper (PDF) <span aria-hidden="true">↗</span>
 </a>
 </div>
 </div>
@@ -839,30 +1004,80 @@ footer {
 </div>
 <div class="racing-grid">
 <article class="card racing-card">
-<div class="field">Formula Student · Business & Communications</div>
+<div class="field">Formula Student · Operations &amp; Sponsorship</div>
+<div class="gallery" data-gallery role="group" aria-roledescription="carousel" aria-label="Aurora Formula Student car photos">
+<div class="g-slides">
+<figure class="slide is-active" data-tab="1" data-label="Aurora Formula car">
 <img class="race-photo" src="assets/aurora-car.jpg" alt="Aurora electric Formula Student car" loading="lazy">
+</figure>
+<!-- ===== 添加更多 Formula 照片：把下面整段复制到这里（去掉首尾的注释符号），改成你的图片和文字 =====
+<figure class="slide" data-tab="26" data-label="AURORA-26">
+<img class="race-photo" src="assets/aurora-26.jpg" alt="Aurora-26 Formula Student car" loading="lazy">
+<figcaption>
+<span class="g-name">AURORA-26</span>
+<ul class="g-stats">
+<li>Weight<b>199 kg</b></li>
+<li>Track<b>1250 mm</b></li>
+<li>Wheelbase<b>1530 mm</b></li>
+</ul>
+</figcaption>
+</figure>
+data-tab 是下方切换按钮上显示的短文字（如 21、22 或 2026）；figcaption 可以整段删掉，只显示照片。 -->
+</div>
+<button class="g-btn g-prev" type="button" aria-label="Previous photo">‹</button>
+<button class="g-btn g-next" type="button" aria-label="Next photo">›</button>
+<div class="g-tabs"></div>
+</div>
 <div class="card-body">
 <h3>Formula</h3>
-<p>I supported Aurora’s sponsorship, business projects, and social media. The team ranked first nationally in publicity points in 2023.</p>
+<p>As Operations Director, I secured CNY 500K+ in sponsorship, handled the team’s business competitions and exhibitions, and was responsible for the commercial projects around its distributed electric drivetrain and GDAS wireless data-acquisition system. I also managed social media and photo and video content, producing 100+ posts, reaching 4,000+ followers, and earning an Outstanding Publicity Team award.</p>
+<div class="card-bottom">
+<span class="meta">Formula Student China · 2nd Place · Represented China in Spain</span>
 <div class="links">
-<a href="https://youtu.be/KgduNsOoL5A" target="_blank" rel="noopener">Watch Formula <span aria-hidden="true">↗</span>
+<a href="https://youtu.be/KgduNsOoL5A" target="_blank" rel="noopener">Watch Spain track run <span aria-hidden="true">↗</span>
 </a>
-<a href="documents/racing-sponsorship.pdf" target="_blank" rel="noopener">Sponsorship proposal <span aria-hidden="true">↗</span>
+<a href="https://aurora-racing.com" target="_blank" rel="noopener">Team website <span aria-hidden="true">↗</span>
 </a>
+<a href="https://www.instagram.com/_auroraracing" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span>
+</a>
+</div>
 </div>
 </div>
 </article>
 <article class="card racing-card">
-<div class="field">Baja · Business & Team Operations</div>
+<div class="field">Baja SAE · Business, Media &amp; Outreach</div>
+<div class="gallery" data-gallery role="group" aria-roledescription="carousel" aria-label="Baja car photos">
+<div class="g-slides">
+<figure class="slide is-active" data-tab="1" data-label="Baja E7 and U15">
 <img class="race-photo" src="assets/baja-u15-e7.jpg" alt="Baja E7 and U15 alongside a Formula car at SZTU Racing Car Studio" loading="lazy">
+</figure>
+<!-- ===== 添加更多 Baja 照片：把下面整段复制到这里（去掉首尾的注释符号），改成你的图片和文字 =====
+<figure class="slide" data-tab="2" data-label="Baja 2024">
+<img class="race-photo" src="assets/baja-2.jpg" alt="描述这张照片" loading="lazy">
+<figcaption>
+<span class="g-name">照片标题</span>
+<ul class="g-stats">
+<li>Result<b>National second prize</b></li>
+</ul>
+</figcaption>
+</figure>
+figcaption 可以整段删掉，只显示照片。 -->
+</div>
+<button class="g-btn g-prev" type="button" aria-label="Previous photo">‹</button>
+<button class="g-btn g-next" type="button" aria-label="Next photo">›</button>
+<div class="g-tabs"></div>
+</div>
 <div class="card-body">
 <h3>Baja</h3>
-<p>I worked on the Hurricane business plan and served as Baja News Officer, supporting media and community outreach. The team earned a national second prize at Nanxun in 2024.</p>
+<p>I developed the 2023 business plan for Hurricane, the team’s fuel-powered Baja car, and served as News Officer in 2024. I also organized racing outreach in communities and schools, 50+ activities reaching 5,000+ students, and took part in the China Hi-Tech Fair in Shenzhen.</p>
+<div class="card-bottom">
+<span class="meta">Baja SAE China · 3rd Place · Represented China in Korea</span>
 <div class="links">
 <a href="https://youtu.be/ZI6aikkppJc" target="_blank" rel="noopener">Watch Baja <span aria-hidden="true">↗</span>
 </a>
 <a href="https://youtu.be/tW2TpuYYLtg" target="_blank" rel="noopener">Team film <span aria-hidden="true">↗</span>
 </a>
+</div>
 </div>
 </div>
 </article>
@@ -877,5 +1092,52 @@ footer {
 <a href="Levia-Zeng-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
 </div>
 </footer>
+<script>
+/* 图片轮播：自动为每个 data-gallery 添加切换按钮、标签、键盘左右键和手机滑动 */
+document.querySelectorAll('[data-gallery]').forEach(function (g) {
+  var slides = [].slice.call(g.querySelectorAll('.slide'));
+  var tabs = g.querySelector('.g-tabs');
+  var i = 0, x0 = null;
+  if (slides.length < 2) { g.classList.add('is-single'); return; }
+
+  slides.forEach(function (s, n) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'g-tab';
+    b.textContent = s.getAttribute('data-tab') || String(n + 1);
+    b.setAttribute('aria-label', 'Show ' + (s.getAttribute('data-label') || 'photo ' + (n + 1)));
+    b.addEventListener('click', function () { show(n); });
+    tabs.appendChild(b);
+  });
+  var btns = [].slice.call(tabs.children);
+
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) {
+      s.classList.toggle('is-active', k === i);
+      s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
+    });
+    btns.forEach(function (b, k) {
+      if (k === i) b.setAttribute('aria-current', 'true');
+      else b.removeAttribute('aria-current');
+    });
+  }
+
+  g.querySelector('.g-prev').addEventListener('click', function () { show(i - 1); });
+  g.querySelector('.g-next').addEventListener('click', function () { show(i + 1); });
+  g.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+  g.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  g.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    x0 = null;
+    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
+  });
+  show(0);
+});
+</script>
 </body>
 </html>
