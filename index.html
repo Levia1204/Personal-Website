@@ -5,38 +5,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Levia Zeng — business analytics, research, and student motorsport.">
-<title>Levia Zeng | Business Analyst Portfolio</title>
+<title>Levia Zeng | 海军蓝与瓷白</title>
 <style>
 /* 配色在 :root 修改；各板块文字在下方 HTML 中修改。 */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 :root {
-  /* ===== 配色：想换颜色，只需要改这一块 =====
-     当前方案 A：深绿墨色 + 紫色点缀（取自 Aurora 赛车的绿紫涂装） */
-  --paper:#f6f6f2;       /* 页面背景 */
-  --card:#fcfcfa;        /* 卡片背景 */
-  --ink:#17302a;         /* 标题、重点文字 */
-  --body:#44544e;        /* 正文 */
-  --muted:#58655f;       /* 次要文字：标签、年份、引用 */
-  --line:#d9ddd6;        /* 分隔线 */
-  --line-strong:#b9c4bd; /* 链接下划线、装饰线 */
-  --accent:#5a3fd0;      /* 点缀色：斜体标题、悬停、聚焦 */
-  --accent-soft:#b9ade8; /* 点缀色的浅色版：卡片悬停边框 */
-  --tint:#e3eae5;        /* 卡片插图底色（4 种） */
-  --tint-2:#d9e5de;
-  --tint-3:#e6e4f0;
-  --tint-4:#e5e9e5;
-  --serif:'Source Serif 4',Georgia,'Songti SC','Noto Serif SC',serif
-
-  /* 备选方案 B：深海军蓝 + 青蓝色（把上面对应的值替换成下面的即可）
-     --paper:#f5f7fa; --card:#ffffff; --ink:#14233c; --body:#3f4c60; --muted:#566275;
-     --line:#dce2ea; --line-strong:#b8c3d1; --accent:#0f6e8c; --accent-soft:#9cc7d6;
-     --tint:#e6ecf3; --tint-2:#dbe7ef; --tint-3:#e8e9f2; --tint-4:#e9edf1;
-
-     备选方案 C：保留原来的绿色（已加深文字，提高可读性）
-     --paper:#f7f6f0; --card:#fcfcf8; --ink:#263e36; --body:#4f5b53; --muted:#5d6a5e;
-     --line:#d9ddd1; --line-strong:#bec6ab; --accent:#5f6f45; --accent-soft:#aeb99c;
-     --tint:#e6e9da; --tint-2:#d9e4dd; --tint-3:#e6dfd2; --tint-4:#e1e4db; */
+  --accent: #526d96;
+  --card: #ffffff;
+  --paper: #f5f7fa;
+  --ink: #24364e;
+  --body: #24364e;
+  --muted: #647185;
+  --line: #d8dfe8;
+  --line-strong: #647185;
+  --sage: #e1e8f1;
+  --accent-soft: #d8dfe8;
+  --tint: #e1e8f1;
+  --tint-2: #d6e0ee;
+  --tint-3: #cdd9e8;
+  --tint-4: #e1e8f1;
+  --serif: 'Source Serif 4',Georgia,'Songti SC','Noto Serif SC',serif;
 }
 
 * {
@@ -808,18 +797,27 @@ footer {
 
 
 
+
+/* Research: related studies grouped together, separate topic below. */
+.research-topics{display:grid;gap:36px}.topic-heading{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}.topic-number{font-size:10px;color:var(--muted)}.topic-heading h3{font-size:26px;margin:0}.topic-caption{font-size:10px;color:var(--muted);margin-left:auto}.research-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}.research-paper{background:var(--card);border:1px solid var(--line);padding:25px;display:flex;flex-direction:column}.paper-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}.research-paper .field{padding:0;min-height:0;max-width:260px}.status{white-space:nowrap;font-size:9px;border:1px solid var(--line);padding:3px 8px;color:var(--muted);border-radius:20px}.published{background:var(--sage);color:var(--ink)}.research-paper h4{font:30px/1.15 var(--serif);margin:0 0 16px;letter-spacing:-.4px}.research-paper p{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 18px}.research-paper .citation{display:block;font-size:10px;color:var(--muted);margin-top:auto}.research-paper .links{margin-top:16px}.green-paper{display:grid;grid-template-columns:1fr 230px;gap:35px}.research-symbol{background:var(--sage);display:flex;justify-content:center;align-items:center;flex-direction:column;min-height:200px}.research-symbol span{font:26px var(--serif)}.research-symbol b{font:24px var(--serif);color:var(--accent)}.research-symbol i{font:9px 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:1px;margin-top:16px}@media(max-width:600px){.research-pair,.green-paper{grid-template-columns:1fr}.topic-heading{flex-wrap:wrap}.topic-caption{flex-basis:100%;margin-left:23px}.research-symbol{min-height:150px}.paper-top{gap:8px}.research-paper{padding:21px}.topic-heading h3{font-size:25px}.research-paper h4{font-size:28px}}
+
+/* Portrait and inline racing films */
+.portrait{margin:0;min-width:0}.portrait img{display:block;width:100%;height:360px;object-fit:cover;object-position:50% 52%;border-radius:160px 160px 3px 3px}.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:9px;letter-spacing:1.3px;color:var(--muted)}.portrait figcaption span{font-size:8px;letter-spacing:.7px}.race-video{aspect-ratio:16/9;background:var(--tint);width:100%}.race-video iframe{display:block;width:100%;height:100%;border:0}@media(max-width:600px){.portrait{max-width:400px;width:100%;margin:auto}.portrait img{height:330px}.race-video{min-height:180px}}
+
+/* 配色方案：海军蓝与瓷白。全站颜色统一在上方 :root 中编辑。 */
+
 </style>
 </head>
 <body>
 <a class="skip" href="#about">Skip to content</a>
 <header class="site-header">
-<a class="brand" href="index.html#about">Levia Zeng<span>BUSINESS ANALYTICS</span>
+<a class="brand" href="#about">Levia Zeng<span>BUSINESS ANALYTICS</span>
 </a>
 <nav aria-label="Main navigation">
-<a href="index.html#about">About me</a>
-<a href="index.html#projects">Projects</a>
-<a href="index.html#research">Research</a>
-<a href="index.html#racing">Racing</a>
+<a href="#about">About me</a>
+<a href="#projects">Projects</a>
+<a href="#research">Research</a>
+<a href="#racing">Racing</a>
 </nav>
 </header>
 <main>
@@ -840,14 +838,7 @@ footer {
 </div>
 <div class="about-meta">VANCOUVER · UBC SAUDER MBAN ’27</div>
 </div>
-<div class="about-art" aria-hidden="true">
-<span class="orbit">
-</span>
-<span class="monogram">L<em>Z</em>
-</span>
-<span class="art-caption">ANALYTICS · RESEARCH · RACING</span>
-</div>
-</section>
+<figure class="portrait"><img src="assets/levia-portrait.jpg" alt="Levia Zeng seated beside stained-glass windows" width="1440" height="810" fetchpriority="high"><figcaption>LEVIA ZENG <span>ANALYTICS · RESEARCH · RACING</span></figcaption></figure></section>
 
 <!-- ===== PROJECTS / 项目卡片：在这里修改文字和链接 ===== -->
 <section id="projects">
@@ -858,14 +849,14 @@ footer {
 </div>
 <div class="project-grid">
 <article class="card">
-<div class="field">Data Visualization</div>
+<div class="field">Data Visualization · Tableau</div>
 <div class="card-art nyc">
 <span class="art-main">59</span>
 <span class="art-caption">COMMUNITY DISTRICTS</span>
 </div>
 <div class="card-body">
 <h3>NYC’s Hidden Rat Hotspots</h3>
-<p>Compared rat complaints with inspection findings across New York City’s 59 community districts to identify hotspots. I built the Queens and Mitigation Zones visualizations and wrote the report and presentation.</p>
+<p>Used Tableau to compare rat complaints with inspection findings across New York City. I created the Queens and Mitigation Zones visualizations, report, and presentation.</p>
 <div class="card-bottom">
 <span class="meta">UBC Sauder · 2026</span>
 <div class="links">
@@ -889,8 +880,6 @@ footer {
 <div class="card-bottom">
 <span class="meta">Climate Innovation Challenge · DeepSky &amp; PwC · 2026</span>
 <div class="links">
-<a href="documents/deep-sky-deck.pptx" target="_blank" rel="noopener">View presentation <span aria-hidden="true">↗</span>
-</a>
 <a href="documents/deep-sky-model.xlsx" target="_blank" rel="noopener">View model <span aria-hidden="true">↗</span>
 </a>
 </div>
@@ -898,7 +887,7 @@ footer {
 </div>
 </article>
 <article class="card">
-<div class="field">Business Strategy & Analytics</div>
+<div class="field">Business Strategy &amp; Analytics</div>
 <div class="card-art cesim">
 <span class="art-main">01 → 02</span>
 <span class="art-caption">ANALYZE. DECIDE. ADAPT.</span>
@@ -914,7 +903,7 @@ footer {
 </div>
 </article>
 <article class="card">
-<div class="field">Marketing & Consumer Insights</div>
+<div class="field">Marketing &amp; Consumer Insights</div>
 <div class="card-art comb">
 <img src="assets/comb-pro.jpg" alt="Comb Pro product concept" loading="lazy">
 </div>
@@ -951,14 +940,14 @@ footer {
 </div>
 </article>
 <article class="card">
-<div class="field">Business Negotiation</div>
+<div class="field">Business Simulation · Competitive Strategy</div>
 <div class="card-art negotiation">
-<span class="art-main">↔</span>
-<span class="art-caption">FINDING COMMON GROUND</span>
+<span class="art-main">↻</span>
+<span class="art-caption">MARKET SIGNALS → BUSINESS DECISIONS</span>
 </div>
 <div class="card-body">
 <h3>National Business Elite Challenge</h3>
-<p>Competed in the business negotiation track and advanced to the national finals, where our team won second prize.</p>
+<p>Competed in a round-based business simulation game. I used competitor and market information from the previous round to make operating decisions for the next.</p>
 <div class="card-bottom">
 <span class="meta">National Second Prize · 2023</span>
 <div class="links">
@@ -975,25 +964,44 @@ footer {
 <span>03 /</span>
 <h2>Research</h2>
 </div>
-<article class="publication">
-<div class="publication-mark" aria-hidden="true">Time<br>
-<em>well shared.</em>
-<span>社会治理 · 2024</span>
+<div class="research-topics">
+<div class="research-topic">
+<div class="topic-heading">
+<span class="topic-number">01</span><h3>Time banking &amp; participation</h3>
+<span class="topic-caption">From elderly care to student volunteering</span>
 </div>
-<div>
-<div class="field">Published Research · Elderly Care</div>
-<h3>Factors Influencing the Willingness to Participate in Time Banks in Elderly Care Services: A Case Study of Rural R County in Guangdong Province</h3>
-<p>Co-authored a survey study of 422 villagers in rural Guangdong on what drives willingness to join a time bank, a mutual-aid scheme in which volunteers earn credits for elderly-care service. Correlation and multiple regression analysis linked life satisfaction, life evaluation, and understanding of the program’s risks to greater willingness, while trust and views of the village showed no significant effect. Published in the Chinese journal <em>Social Governance Review (社会治理)</em>.</p>
-<p class="citation" lang="zh">魏冰玲、吴金兴、曾巧彤 · 2024年第4期，63–79页<br>养老服务中时间银行参与意愿的影响因素研究——以广东省R县农村为例</p>
-<div class="links">
-<a href="https://doi.org/10.16775/j.cnki.10-1285/d.2024.04.006" target="_blank" rel="noopener">Read journal article <span aria-hidden="true">↗</span>
-</a>
-<a href="documents/time-bank-paper.pdf" target="_blank" rel="noopener">Read paper (PDF) <span aria-hidden="true">↗</span>
-</a>
+<div class="research-pair">
+<article class="research-paper"><div class="paper-top">
+<span class="field">Social Research · Elderly Care</span><span class="status published">Published</span>
+</div>
+<h4>Participation in Elderly-Care Time Banks</h4>
+<p>Co-authored a study of factors influencing time-bank participation in rural Guangdong. Published in <em>Social Governance Review (社会治理)</em>.</p>
+<span class="citation">Wei, Wu &amp; Zeng · 2024 · Issue 4, pp. 63–79</span><div class="links"><a href="https://doi.org/10.16775/j.cnki.10-1285/d.2024.04.006" target="_blank" rel="noopener">Read journal article <span aria-hidden="true">↗</span></a></div></article>
+<article class="research-paper"><div class="paper-top">
+<span class="field">Social Research · Student Volunteering</span><span class="status">Under review</span>
+</div>
+<h4>College Students’ Participation in Time Banking</h4>
+<p>Building on the elderly-care study, this research examines students’ willingness to participate in time-bank volunteering. It analyzes 628 survey responses using factor analysis and logistic regression.</p>
+<span class="citation">Co-author · Continuing the time-banking research</span></article>
 </div>
 </div>
-</article>
-</section>
+<div class="research-topic">
+<div class="topic-heading">
+<span class="topic-number">02</span><h3>Green finance &amp; economic growth</h3>
+</div>
+<article class="research-paper green-paper"><div>
+<div class="paper-top">
+<span class="field">Green Finance · Machine Learning</span><span class="status">Under review</span>
+</div>
+<h4>Green Technology, Green Finance &amp; GDP</h4>
+<p>A separate research topic exploring how green technology and green finance relate to GDP. Using 880 provincial-level observations, the study compares regression and machine-learning models across different feature sets.</p>
+<span class="citation">Co-author · A Study on the Adaptive Relationship Between Green Technology, Green Finance, and GDP</span>
+</div>
+<div class="research-symbol" aria-hidden="true">
+<span>Technology</span><b>×</b><span>Finance</span><i>Economic growth</i>
+</div></article>
+</div>
+</div></section>
 
 <!-- ===== RACING / Formula 与 Baja：在这里修改文字和链接 ===== -->
 <section id="racing">
@@ -1005,32 +1013,10 @@ footer {
 <div class="racing-grid">
 <article class="card racing-card">
 <div class="field">Formula Student · Operations &amp; Sponsorship</div>
-<div class="gallery" data-gallery role="group" aria-roledescription="carousel" aria-label="Aurora Formula Student car photos">
-<div class="g-slides">
-<figure class="slide is-active" data-tab="1" data-label="Aurora Formula car">
-<img class="race-photo" src="assets/aurora-car.jpg" alt="Aurora electric Formula Student car" loading="lazy">
-</figure>
-<!-- ===== 添加更多 Formula 照片：把下面整段复制到这里（去掉首尾的注释符号），改成你的图片和文字 =====
-<figure class="slide" data-tab="26" data-label="AURORA-26">
-<img class="race-photo" src="assets/aurora-26.jpg" alt="Aurora-26 Formula Student car" loading="lazy">
-<figcaption>
-<span class="g-name">AURORA-26</span>
-<ul class="g-stats">
-<li>Weight<b>199 kg</b></li>
-<li>Track<b>1250 mm</b></li>
-<li>Wheelbase<b>1530 mm</b></li>
-</ul>
-</figcaption>
-</figure>
-data-tab 是下方切换按钮上显示的短文字（如 21、22 或 2026）；figcaption 可以整段删掉，只显示照片。 -->
-</div>
-<button class="g-btn g-prev" type="button" aria-label="Previous photo">‹</button>
-<button class="g-btn g-next" type="button" aria-label="Next photo">›</button>
-<div class="g-tabs"></div>
-</div>
+<div class="race-video"><iframe src="https://www.youtube-nocookie.com/embed/KgduNsOoL5A?playsinline=1&amp;rel=0" title="Formula Student — Spain track run" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 <div class="card-body">
 <h3>Formula</h3>
-<p>As Operations Director, I secured CNY 500K+ in sponsorship, handled the team’s business competitions and exhibitions, and was responsible for the commercial projects around its distributed electric drivetrain and GDAS wireless data-acquisition system. I also managed social media and photo and video content, producing 100+ posts, reaching 4,000+ followers, and earning an Outstanding Publicity Team award.</p>
+<p>As Operations Director, I secured CNY 500K+ in sponsorship and managed commercial projects, business competitions, and exhibitions. I also led social media and visual content, producing 100+ posts and growing an audience of 4,000+ followers.</p>
 <div class="card-bottom">
 <span class="meta">Formula Student China · 2nd Place · Represented China in Spain</span>
 <div class="links">
@@ -1046,30 +1032,10 @@ data-tab 是下方切换按钮上显示的短文字（如 21、22 或 2026）；
 </article>
 <article class="card racing-card">
 <div class="field">Baja SAE · Business, Media &amp; Outreach</div>
-<div class="gallery" data-gallery role="group" aria-roledescription="carousel" aria-label="Baja car photos">
-<div class="g-slides">
-<figure class="slide is-active" data-tab="1" data-label="Baja E7 and U15">
-<img class="race-photo" src="assets/baja-u15-e7.jpg" alt="Baja E7 and U15 alongside a Formula car at SZTU Racing Car Studio" loading="lazy">
-</figure>
-<!-- ===== 添加更多 Baja 照片：把下面整段复制到这里（去掉首尾的注释符号），改成你的图片和文字 =====
-<figure class="slide" data-tab="2" data-label="Baja 2024">
-<img class="race-photo" src="assets/baja-2.jpg" alt="描述这张照片" loading="lazy">
-<figcaption>
-<span class="g-name">照片标题</span>
-<ul class="g-stats">
-<li>Result<b>National second prize</b></li>
-</ul>
-</figcaption>
-</figure>
-figcaption 可以整段删掉，只显示照片。 -->
-</div>
-<button class="g-btn g-prev" type="button" aria-label="Previous photo">‹</button>
-<button class="g-btn g-next" type="button" aria-label="Next photo">›</button>
-<div class="g-tabs"></div>
-</div>
+<div class="race-video"><iframe src="https://www.youtube-nocookie.com/embed/ZI6aikkppJc?playsinline=1&amp;rel=0" title="Baja — track run" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 <div class="card-body">
 <h3>Baja</h3>
-<p>I developed the 2023 business plan for Hurricane, the team’s fuel-powered Baja car, and served as News Officer in 2024. I also organized racing outreach in communities and schools, 50+ activities reaching 5,000+ students, and took part in the China Hi-Tech Fair in Shenzhen.</p>
+<p>I developed Hurricane’s 2023 business plan and served as Baja News Officer in 2024. I also organized community and school outreach, with 50+ activities reaching 5,000+ students.</p>
 <div class="card-bottom">
 <span class="meta">Baja SAE China · 3rd Place · Represented China in Korea</span>
 <div class="links">
@@ -1092,52 +1058,5 @@ figcaption 可以整段删掉，只显示照片。 -->
 <a href="Levia-Zeng-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
 </div>
 </footer>
-<script>
-/* 图片轮播：自动为每个 data-gallery 添加切换按钮、标签、键盘左右键和手机滑动 */
-document.querySelectorAll('[data-gallery]').forEach(function (g) {
-  var slides = [].slice.call(g.querySelectorAll('.slide'));
-  var tabs = g.querySelector('.g-tabs');
-  var i = 0, x0 = null;
-  if (slides.length < 2) { g.classList.add('is-single'); return; }
-
-  slides.forEach(function (s, n) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'g-tab';
-    b.textContent = s.getAttribute('data-tab') || String(n + 1);
-    b.setAttribute('aria-label', 'Show ' + (s.getAttribute('data-label') || 'photo ' + (n + 1)));
-    b.addEventListener('click', function () { show(n); });
-    tabs.appendChild(b);
-  });
-  var btns = [].slice.call(tabs.children);
-
-  function show(n) {
-    i = (n + slides.length) % slides.length;
-    slides.forEach(function (s, k) {
-      s.classList.toggle('is-active', k === i);
-      s.setAttribute('aria-hidden', k === i ? 'false' : 'true');
-    });
-    btns.forEach(function (b, k) {
-      if (k === i) b.setAttribute('aria-current', 'true');
-      else b.removeAttribute('aria-current');
-    });
-  }
-
-  g.querySelector('.g-prev').addEventListener('click', function () { show(i - 1); });
-  g.querySelector('.g-next').addEventListener('click', function () { show(i + 1); });
-  g.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') show(i - 1);
-    if (e.key === 'ArrowRight') show(i + 1);
-  });
-  g.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-  g.addEventListener('touchend', function (e) {
-    if (x0 === null) return;
-    var dx = e.changedTouches[0].clientX - x0;
-    x0 = null;
-    if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1));
-  });
-  show(0);
-});
-</script>
 </body>
 </html>
