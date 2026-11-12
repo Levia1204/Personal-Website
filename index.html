@@ -1,16 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- 首页完整样式已内嵌；图片、论文及互动页面使用同文件夹内的相对路径。 -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Levia Zeng — business analytics, research, and student motorsport.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Levia Zeng | Business Analyst &amp; Data Analyst Portfolio</title>
-<meta name="description" content="Levia Zeng, UBC Sauder MBAN student: data analysis, financial modeling, and market research projects, plus published research.">
+<meta name="description" content="Levia Zeng — business analytics, research, and student motorsport.">
 <style>
-/* 配色在 :root 修改；各板块文字在下方 HTML 中修改。 */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
-
+/* 配色在 :root 修改；文字在下方 HTML 中修改 */
 :root {
   --accent: #9b6b46;
   --card: #fffdf8;
@@ -29,855 +27,132 @@
   --serif: 'Source Serif 4',Georgia,'Songti SC','Noto Serif SC',serif;
 }
 
-* {
-  box-sizing:border-box
-}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:105px
-}
-
-body {
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font:15px/1.7 'DM Sans','PingFang SC','Microsoft YaHei',Arial,sans-serif
-}
-
-a {
-  color:inherit;
-  text-decoration:none
-}
-
-a:hover {
-  color:var(--accent)
-}
-
-a:focus-visible {
-  outline:2px solid var(--accent);
-  outline-offset:5px
-}
-
-.site-header,main,footer {
-  max-width:1160px;
-  margin:auto
-}
-
-.site-header {
-  padding:26px 0;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line)
-}
-
-.brand {
-  font:32px/1 var(--serif);
-  letter-spacing:-.5px
-}
-
-.brand span {
-  display:block;
-  font:10px/1.5 'DM Sans',sans-serif;
-  letter-spacing:2px;
-  margin-top:10px
-}
-
-nav {
-  display:flex;
-  gap:31px;
-  font-size:13px
-}
-
-.skip {
-  position:absolute;
-  left:10px;
-  top:-80px
-}
-
-.skip:focus {
-  top:10px;
-  background:white;
-  padding:10px;
-  z-index:9
-}
-
-section {
-  padding:65px 0;
-  border-bottom:1px solid var(--line)
-}
-
-.about {
-  display:grid;
-  grid-template-columns:1.5fr 1fr;
-  gap:80px;
-  align-items:center;
-  padding:70px 0 75px
-}
-
-.eyebrow,.field {
-  font-size:10px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:1.6px
-}
-
-.eyebrow {
-  color:var(--muted);
-  margin-bottom:20px
-}
-
-h1 {
-  font:64px/1.06 var(--serif);
-  letter-spacing:-1px;
-  margin:0 0 25px
-}
-
-em {
-  font-weight:400;
-  color:var(--accent)
-}
-
-.about p {
-  max-width:590px;
-  color:var(--body);
-  font-size:16px;
-  line-height:1.8
-}
-
-.about .links {
-  margin-top:25px
-}
-
-.about-meta {
-  font-size:11px;
-  letter-spacing:1.7px;
-  margin-top:32px;
-  color:var(--muted)
-}
-
-.about-art {
-  height:300px;
-  background:var(--tint);
-  border-radius:48% 48% 2px 2px;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden
-}
-
-.monogram {
-  font:150px var(--serif);
-  z-index:1;
-  letter-spacing:-8px
-}
-
-.orbit {
-  position:absolute;
-  width:220px;
-  height:240px;
-  border:1px solid var(--line-strong);
-  border-radius:50%;
-  transform:rotate(30deg)
-}
-
-.orbit:after {
-  content:'';
-  position:absolute;
-  inset:15px -30px;
-  border:1px solid var(--line-strong);
-  border-radius:50%;
-  transform:rotate(65deg)
-}
-
-.about-art .art-caption {
-  position:absolute;
-  bottom:24px;
-  font-size:10px
-}
-
-.section-heading {
-  display:flex;
-  align-items:baseline;
-  gap:15px;
-  margin-bottom:28px
-}
-
-.section-heading>span {
-  font-size:10px;
-  color:var(--muted)
-}
-
-h2 {
-  font:42px/1.1 var(--serif);
-  margin:0
-}
-
-.section-heading p {
-  margin:0 0 0 auto;
-  font-size:12px;
-  color:var(--muted)
-}
-
-.project-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px
-}
-
-.card {
-  border:1px solid var(--line);
-  background:var(--card);
-  border-radius:3px;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  transition:transform .2s,border-color .2s
-}
-
-.card:hover {
-  transform:translateY(-3px);
-  border-color:var(--accent-soft)
-}
-
-.field {
-  padding:16px 20px;
-  line-height:1.5;
-  min-height:48px;
-  font-size:11px;
-  color:var(--muted)
-}
-
-.card-art {
-  height:170px;
-  background:var(--tint);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden
-}
-
-.art-main {
-  font:72px/1 var(--serif);
-  letter-spacing:-1px
-}
-
-.art-caption {
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:16px
-}
-
-.card-art img {
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-
-.tennis {
-  background:var(--tint-4)
-}
-
-.tennis:before,.tennis:after {
-  content:'';
-  position:absolute;
-  width:140px;
-  height:140px;
-  border:1px solid var(--line-strong);
-  border-radius:50%;
-  left:-80px
-}
-
-.tennis:after {
-  left:auto;
-  right:-80px
-}
-
-.climate {
-  background:var(--tint-2)
-}
-
-.climate .art-main {
-  font-size:90px
-}
-
-.cesim {
-  background:var(--tint-3)
-}
-
-.cesim .art-main {
-  font-size:48px
-}
-
-.negotiation {
-  background:var(--tint-3)
-}
-
-.card-body {
-  padding:21px;
-  display:flex;
-  flex-direction:column;
-  flex:1
-}
-
-h3 {
-  font:29px/1.15 var(--serif);
-  letter-spacing:-.2px;
-  margin:0 0 14px
-}
-
-.card p {
-  font-size:13px;
-  line-height:1.8;
-  color:var(--body);
-  margin:0 0 23px
-}
-
-.card-bottom {
-  margin-top:auto
-}
-
-.meta {
-  font-size:11px;
-  color:var(--muted);
-  display:block;
-  margin-bottom:13px
-}
-
-.links {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px 23px;
-  font-size:12px
-}
-
-.links a {
-  border-bottom:1px solid var(--line-strong);
-  padding-bottom:2px
-}
-
-.links a:hover {
-  border-color:var(--accent)
-}
-
-.links span {
-  margin-left:9px
-}
-
-.publication {
-  display:grid;
-  grid-template-columns:290px 1fr;
-  gap:40px;
-  align-items:center
-}
-
-.publication-mark {
-  background:var(--tint-3);
-  padding:35px;
-  font:44px/1.1 var(--serif);
-  min-height:240px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center
-}
-
-.publication-mark span {
-  font:11px 'DM Sans','PingFang SC','Microsoft YaHei',sans-serif;
-  letter-spacing:2px;
-  margin-top:24px
-}
-
-.publication .field {
-  padding:0;
-  margin-bottom:12px;
-  min-height:0
-}
-
-.publication h3 {
-  font-size:27px;
-  line-height:1.25;
-  letter-spacing:0
-}
-
-.publication p {
-  font-size:14px;
-  color:var(--body);
-  max-width:670px
-}
-
-.publication .citation {
-  font-size:12px;
-  color:var(--muted);
-  line-height:1.9
-}
-
-.racing-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px
-}
-
-.race-photo {
-  width:100%;
-  height:270px;
-  object-fit:contain;
-  background:var(--tint-4)
-}
-
-/* ===== 可交互图片轮播（Formula / Baja 卡片）=====
-   只有 1 张照片时外观和原来完全一样；添加第 2 张及以上时自动出现左右箭头和切换标签。 */
-.gallery {
-  --stage-h:270px;
-  position:relative;
-  background:var(--tint-4)
-}
-
-.g-slides {
-  display:grid
-}
-
-.slide {
-  grid-area:1/1;
-  margin:0;
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .3s,visibility .3s
-}
-
-.slide.is-active {
-  opacity:1;
-  visibility:visible
-}
-
-.slide .race-photo {
-  display:block;
-  height:var(--stage-h)
-}
-
-.slide figcaption {
-  display:flex;
-  flex-wrap:wrap;
-  align-items:baseline;
-  gap:6px 18px;
-  padding:12px 20px;
-  background:var(--card);
-  border-top:1px solid var(--line);
-  font-size:12px;
-  color:var(--muted)
-}
-
-.g-name {
-  font-size:13px;
-  font-weight:600;
-  color:var(--ink)
-}
-
-.g-stats {
-  display:flex;
-  flex-wrap:wrap;
-  gap:4px 16px;
-  margin:0;
-  padding:0;
-  list-style:none
-}
-
-.g-stats b {
-  margin-left:4px;
-  font-weight:600;
-  color:var(--ink)
-}
-
-.g-btn {
-  position:absolute;
-  top:calc(var(--stage-h)/2 - 18px);
-  width:36px;
-  height:36px;
-  padding:0 0 3px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid var(--line);
-  border-radius:50%;
-  background:rgba(252,252,250,.92);
-  color:var(--ink);
-  font:22px/1 'DM Sans',sans-serif;
-  cursor:pointer
-}
-
-.g-prev {
-  left:12px
-}
-
-.g-next {
-  right:12px
-}
-
-.g-btn:hover {
-  border-color:var(--accent-soft);
-  color:var(--accent)
-}
-
-.g-btn:focus-visible,.g-tab:focus-visible {
-  outline:2px solid var(--accent);
-  outline-offset:3px
-}
-
-.g-tabs {
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  padding:12px 20px;
-  background:var(--card);
-  border-top:1px solid var(--line)
-}
-
-.g-tab {
-  padding:7px 11px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  background:transparent;
-  color:var(--muted);
-  font:600 11px/1 'DM Sans',sans-serif;
-  letter-spacing:.8px;
-  cursor:pointer
-}
-
-.g-tab:hover {
-  border-color:var(--accent-soft)
-}
-
-.g-tab[aria-current="true"] {
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--paper)
-}
-
-.gallery.is-single .g-btn,.gallery.is-single .g-tabs {
-  display:none
-}
-
-.racing-card .card-body {
-  padding:25px
-}
-
-.racing-card h3 {
-  font-size:35px
-}
-
-.racing-card p {
-  max-width:460px
-}
-
-.racing-card .links {
-  margin-top:auto
-}
-
-footer {
-  display:flex;
-  justify-content:space-between;
-  padding:28px 0 40px;
-  font-size:11px;
-  color:var(--muted)
-}
-
-footer div {
-  display:flex;
-  gap:22px
-}
-
-.detail {
-  max-width:850px;
-  margin:auto;
-  padding:65px 0
-}
-
-.detail h1 {
-  font-size:50px
-}
-
-.detail .field {
-  padding:0;
-  margin:30px 0 10px;
-  min-height:0
-}
-
-.detail p {
-  max-width:680px
-}
-
-.detail .links {
-  margin:25px 0
-}
-
-.detail .note {
-  font-size:11px;
-  color:var(--muted)
-}
-
-.back {
-  font-size:12px
-}
-
-/* 衬线标题统一使用中等字重，比原来的细体更柔和易读 */
-h1,h2,h3,.brand,.monogram,.art-main,.publication-mark {
-  font-weight:500
-}
-
-@media(max-width:1240px) {
-  .site-header,main,footer {
-  margin-left:35px;
-  margin-right:35px
-}
-
-
-}
-
-@media(max-width:850px) {
-  .project-grid {
-  grid-template-columns:repeat(2,minmax(0,1fr))
-}
-
-.about {
-  gap:35px
-}
-
-h1 {
-  font-size:52px
-}
-
-.about-art {
-  height:260px
-}
-
-.publication {
-  grid-template-columns:230px 1fr;
-  gap:25px
-}
-
-.gallery {
-  --stage-h:220px
-}
-
-
-}
-
-@media(max-width:600px) {
-  html {
-  scroll-padding-top:25px
-}
-
-.site-header,main,footer {
-  margin-left:22px;
-  margin-right:22px
-}
-
-.site-header {
-  align-items:flex-start;
-  gap:22px;
-  flex-direction:column;
-  padding:24px 0
-}
-
-nav {
-  gap:25px;
-  font-size:12px
-}
-
-.brand {
-  font-size:30px
-}
-
-.brand span {
-  display:none
-}
-
-.about {
-  grid-template-columns:1fr;
-  gap:32px;
-  padding:45px 0
-}
-
-.about-art {
-  height:180px;
-  border-radius:2px
-}
-
-.monogram {
-  font-size:110px
-}
-
-.about-art .art-caption {
-  bottom:12px
-}
-
-h1 {
-  font-size:48px
-}
-
-.about p {
-  font-size:14px
-}
-
-.about-meta {
-  margin-top:24px
-}
-
-section {
-  padding:42px 0
-}
-
-.project-grid,.racing-grid,.publication {
-  grid-template-columns:1fr
-}
-
-.section-heading {
-  flex-wrap:wrap;
-  gap:12px
-}
-
-h2 {
-  font-size:36px
-}
-
-.section-heading p {
-  display:none
-}
-
-.card-art {
-  height:180px
-}
-
-.card p {
-  font-size:14px
-}
-
-.publication-mark {
-  min-height:180px;
-  font-size:38px
-}
-
-.publication h3 {
-  font-size:24px
-}
-
-.gallery {
-  --stage-h:230px
-}
-
-footer {
-  flex-direction:column;
-  gap:15px
-}
-
-.detail {
-  padding:35px 0
-}
-
-.detail h1 {
-  font-size:40px
-}
-
-
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {
-  scroll-behavior:auto
-}
-
-.card,.slide {
-  transition:none
-}
-
-
-}
-
-
-
-
-/* Research: related studies grouped together, separate topic below. */
-.research-topics{display:grid;gap:36px}.topic-heading{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}.topic-number{font-size:11px;color:var(--muted)}.topic-heading h3{font-size:26px;margin:0}.topic-caption{font-size:11px;color:var(--muted);margin-left:auto}.research-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px}.research-paper{background:var(--card);border:1px solid var(--line);padding:25px;display:flex;flex-direction:column}.paper-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:19px}.research-paper .field{padding:0;min-height:0;max-width:260px}.status{white-space:nowrap;font-size:11px;border:1px solid var(--line);padding:3px 8px;color:var(--muted);border-radius:20px}.published{background:var(--sage);color:var(--ink)}.research-paper h4{font:30px/1.15 var(--serif);margin:0 0 16px;letter-spacing:-.4px}.research-paper p{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 18px}.research-paper .citation{display:block;font-size:12px;color:var(--muted);margin-top:auto}.research-paper .links{margin-top:16px}.green-paper{display:grid;grid-template-columns:1fr 230px;gap:35px}.research-symbol{background:var(--sage);display:flex;justify-content:center;align-items:center;flex-direction:column;min-height:200px}.research-symbol span{font:26px var(--serif)}.research-symbol b{font:24px var(--serif);color:var(--accent)}.research-symbol i{font:11px 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:1px;margin-top:16px}@media(max-width:600px){.research-pair,.green-paper{grid-template-columns:1fr}.topic-heading{flex-wrap:wrap}.topic-caption{flex-basis:100%;margin-left:23px}.research-symbol{min-height:150px}.paper-top{gap:8px}.research-paper{padding:21px}.topic-heading h3{font-size:25px}.research-paper h4{font-size:28px}}
-
-/* Portrait and inline racing films */
-.portrait{margin:0;min-width:0}.portrait img{display:block;width:100%;height:360px;object-fit:cover;object-position:50% 52%;border-radius:160px 160px 3px 3px}.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:14px;font-size:11px;letter-spacing:1.3px;color:var(--muted)}.portrait figcaption span{font-size:10px;letter-spacing:.7px}.race-video{aspect-ratio:16/9;background:var(--tint);width:100%}.race-video iframe{display:block;width:100%;height:100%;border:0}@media(max-width:600px){.portrait{max-width:400px;width:100%;margin:auto}.portrait img{height:330px}.race-video{min-height:180px}}
-
-/* 配色方案：沙色与浓咖。全站颜色统一在上方 :root 中编辑。 */
-
-
-/* Circular portrait: keep width and height equal at every screen size. */
-.portrait img{width:100%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 55%}.portrait{max-width:360px;justify-self:center;width:100%}.local-video-note{padding:20px;font-size:13px;line-height:1.6;color:var(--ink);background:var(--tint);height:100%;display:grid;align-content:center}.local-video-note strong{display:block;margin-bottom:8px}.race-video{min-height:0}@media(max-width:600px){.portrait{max-width:300px}.portrait img{height:auto;aspect-ratio:1}}
-
-/* Selected project illustrations: change the SVG path in each card to swap designs. */
-.card-art.project-doodle{background:var(--tint);height:190px;padding:0 18px}.card-art.project-doodle img{width:100%;height:100%;object-fit:contain;max-width:300px}
-/* Experience, toolkit line, click-to-play videos */
-.skills{margin-top:22px;font-size:12px;letter-spacing:.6px;color:var(--muted)}
-.yt-play{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:var(--tint);cursor:pointer}
-.yt-play img{display:block;width:100%;height:100%;object-fit:cover}
-.yt-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px;padding-left:4px;border:1px solid var(--line)}
-.yt-play:hover .yt-icon{background:var(--accent);color:#fff}.yt-play:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
-.contact-icons{display:flex;gap:12px;margin-top:26px}
+:root{--serif:'Source Serif 4',Georgia,'Songti SC','Noto Serif SC',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 'DM Sans','PingFang SC','Microsoft YaHei',Arial,sans-serif}
+a{color:inherit;text-decoration:none}img{max-width:100%}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--card);padding:8px 12px;z-index:50}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px clamp(16px,4vw,48px);background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{font:500 20px/1 var(--serif)}.brand span{display:block;font:600 10px 'DM Sans',sans-serif;letter-spacing:2px;color:var(--muted);margin-top:5px}
+nav{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:5px;overflow-x:auto}
+nav a{padding:8px 16px;border-radius:99px;font-size:13px;font-weight:500;white-space:nowrap}nav a:hover,nav a.on{background:var(--ink);color:var(--paper)}
+section{padding:56px 0}
+.hero{max-width:760px;margin:0 auto;padding:64px 22px 24px;text-align:center}
+.avatar{width:124px;height:124px;border-radius:50%;object-fit:cover;object-position:center 28%;border:4px solid var(--card);box-shadow:0 0 0 1px var(--line);margin:0 auto 12px;display:block}
+.cap{font-size:11px;letter-spacing:1.4px;color:var(--muted)}.cap span{display:block;margin-top:2px}
+.eyebrow,.sh span,.about-meta{font-size:11px;letter-spacing:2px;color:var(--muted)}.eyebrow{margin-top:34px}
+h1{font:500 clamp(36px,6vw,62px)/1.08 var(--serif);margin:10px 0 18px}em{color:var(--accent)}
+.hero p{max-width:620px;margin:0 auto 24px;color:var(--body)}
+.contact-icons{display:flex;gap:12px;justify-content:center}
 .contact-icon{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center}
-.contact-icon svg{width:20px;height:20px}
-.contact-icon:hover{border-color:var(--accent);color:var(--accent)}
-.contact-icon:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.contact-icon svg{width:20px;height:20px}.contact-icon:hover{border-color:var(--accent);color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.skills{margin-top:22px;font-size:13px;letter-spacing:.6px;color:var(--body)}.about-meta{margin-top:10px}
+.sh{text-align:center;margin:0 0 30px;padding:0 22px}.sh h2{font:500 clamp(30px,4vw,40px)/1.1 var(--serif);margin:6px 0}.sh p{margin:0;color:var(--muted)}
+.wrap{position:relative;overflow:hidden;padding:8px 0}
+.stage{--w:min(520px,78vw);display:grid;grid-template-columns:var(--w);justify-content:center}
+.slide{grid-area:1/1;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;opacity:0;pointer-events:none;transform:scale(.8);transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.slide[data-pos="0"]{opacity:1;pointer-events:auto;transform:none;z-index:2;border-color:var(--accent)}
+.slide[data-pos="-1"],.slide[data-pos="1"]{opacity:.32;pointer-events:auto;cursor:pointer;z-index:1}
+.slide[data-pos="-1"]{transform:translateX(calc(-1*(var(--w)*.93 + 24px))) scale(.86)}
+.slide[data-pos="1"]{transform:translateX(calc(var(--w)*.93 + 24px)) scale(.86)}
+.slide:not([data-pos="0"]) a{pointer-events:none}
+.art{background:var(--tint);height:190px;display:flex;align-items:center;justify-content:center}.art img{height:100%;width:auto}
+.body{padding:22px 26px 26px;display:flex;flex-direction:column;flex:1}
+.field{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.slide h3,.race h3{font:500 26px/1.2 var(--serif);margin:0 0 10px}
+.slide p,.paper p,.race p{font-size:14px;color:var(--body);margin:0 0 16px}
+.bottom{margin-top:auto}.meta{display:block;font-size:12px;color:var(--muted);margin-bottom:10px}
+.links{display:flex;flex-wrap:wrap;gap:8px 18px}.links a{font-size:13px;border-bottom:1px solid var(--line-strong);padding-bottom:2px}.links a:hover{color:var(--accent);border-color:var(--accent)}
+.nb{position:absolute;top:50%;z-index:5;width:46px;height:46px;margin-top:-23px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer}
+.nb:hover{border-color:var(--accent);color:var(--accent)}.prev{left:clamp(8px,3vw,40px)}.next{right:clamp(8px,3vw,40px)}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:20px}.dots button{width:8px;height:8px;padding:0;border:0;border-radius:4px;background:var(--line-strong);opacity:.4;cursor:pointer}
+.dots button[aria-current="true"]{width:24px;background:var(--accent);opacity:1}.count{text-align:center;font-size:12px;letter-spacing:1.4px;color:var(--muted);margin-top:10px}
+.rgrid,.rc{max-width:1180px;margin:0 auto;padding:0 22px;display:grid;gap:18px}.rgrid{grid-template-columns:repeat(3,1fr)}
+.topic{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-top:6px}.topic.t1{grid-column:span 2}
+.topic .num,.topic .cap{font-size:12px;color:var(--muted)}.topic h3{font:500 24px var(--serif);margin:0}
+.paper,.race{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.pv{background:var(--tint);min-height:140px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:18px;text-align:center}.pv .field{margin:0}
+.status{font-size:11px;padding:3px 12px;border-radius:99px;background:var(--card);color:var(--muted);border:1px solid var(--line)}.status.published{background:var(--accent);border-color:var(--accent);color:#fff}
+.sym{font:500 24px var(--serif)}.sym b{margin:0 8px;color:var(--accent)}.sym i{display:block;font:11px 'DM Sans',sans-serif;letter-spacing:1.4px;margin-top:4px;color:var(--muted)}
+.pb{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}.paper h4{font:500 21px/1.25 var(--serif);margin:0 0 10px}.citation{display:block;font-size:12px;color:var(--muted);margin:auto 0 12px}
+.rc{grid-template-columns:1.5fr 1fr}.race{padding:26px}.race.f{border-color:var(--accent)}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 18px}.stats b{display:block;font:500 38px/1 var(--serif)}.stats span{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted)}
+.race .meta{margin-top:auto}.race-video{aspect-ratio:16/9;background:var(--tint);border-radius:12px;overflow:hidden;margin-bottom:18px}.race-video iframe{width:100%;height:100%;border:0}
+.yt-play{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:var(--tint);cursor:pointer}.yt-play img{display:block;width:100%;height:100%;object-fit:cover}
+.yt-icon{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:var(--card);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px;padding-left:4px;border:1px solid var(--line)}.yt-play:hover .yt-icon{background:var(--accent);color:#fff}
+.local-video-note{padding:22px;font-size:13px}.local-video-note strong{display:block;margin-bottom:6px}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:30px clamp(16px,4vw,48px);border-top:1px solid var(--line);font-size:13px;color:var(--muted)}footer div{display:flex;gap:18px}
+@media(max-width:900px){.rgrid,.rc{grid-template-columns:1fr}.topic.t1{grid-column:auto}header{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.slide{transition:none}html{scroll-behavior:auto}}
+
+/* Viewport sections: header height is measured, not guessed. */
+:root{--header-height:76px}html{scroll-padding-top:var(--header-height);scroll-snap-type:y proximity}main>section{min-height:calc(100svh - var(--header-height));scroll-snap-align:start;padding:24px 0;display:flex;flex-direction:column;justify-content:center}.hero{padding:24px 22px;max-width:760px}.sh{margin-bottom:20px}.hero .eyebrow{margin-top:16px}.hero .avatar{width:112px;height:112px}.hero h1{font-size:clamp(36px,5vw,54px)}.hero p{margin-bottom:16px}.hero .skills{margin-top:16px}.stage{--w:min(600px,78vw)}.art{height:clamp(100px,18svh,160px);flex-shrink:0}.body{padding:16px 24px 20px}.slide p{line-height:1.6}.dots{margin-top:12px}.count{margin-top:6px}
+/* Two actual groups, so headings cannot detach from their papers. */
+.rgrid{grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:22px;width:100%;max-width:1260px}.research-group{min-width:0;border:1px solid var(--line);border-radius:20px;background:color-mix(in srgb,var(--tint) 38%,var(--paper));padding:18px;display:flex;flex-direction:column}.group-1{background:var(--card)}.group-heading{padding:0 2px 14px;border-bottom:1px solid var(--line);margin-bottom:14px}.group-number{font-size:9px;letter-spacing:1.6px;color:var(--accent)}.group-heading h3{font:500 28px/1.15 var(--serif);margin:5px 0}.group-heading p{font-size:11px;color:var(--muted);margin:0}.group-papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;flex:1}.group-1 .group-papers{grid-template-columns:1fr}.paper{border-radius:12px}.pv{min-height:0;align-items:flex-start;text-align:left;padding:13px 16px;gap:8px;background:transparent;border-bottom:1px solid var(--line)}.pv .field{font-size:9px;letter-spacing:1px}.status{font-size:10px;padding:2px 9px}.pb{padding:16px;gap:0}.paper h4{font-size:20px;line-height:1.2}.paper p{font-size:13px;line-height:1.65;margin-bottom:14px}.citation{font-size:10px;line-height:1.6}.paper .links{gap:8px 14px}.paper .links a,.detail-link{font-size:11px}.detail-link{border:0;border-bottom:1px solid var(--line-strong);padding:0 0 2px;background:none;font-family:inherit;color:var(--ink);cursor:pointer}.study-dialog{border:1px solid var(--line);border-radius:20px;padding:32px;max-width:620px;width:calc(100% - 32px);max-height:85svh;overflow:auto;background:var(--card);color:var(--ink)}.study-dialog::backdrop{background:#45352c66;backdrop-filter:blur(4px)}.study-dialog h3{font:28px/1.2 var(--serif);margin:12px 0 20px}.study-dialog p{font-size:15px;line-height:1.8}.close-dialog{float:right;border:0;background:none;font-size:28px;color:var(--ink);cursor:pointer}
+.rc{width:100%;grid-template-columns:1fr 1fr;max-width:1120px}.race{padding:18px}.race-video{width:100%;max-height:clamp(150px,24svh,250px);flex-shrink:0;margin-bottom:12px}.race .stats{gap:18px;margin:0 0 12px}.stats b{font-size:28px}.stats span{font-size:9px}.race h3{font-size:24px}.race p{font-size:13px;line-height:1.6;margin-bottom:12px}.race .field{font-size:9px}.race .meta{font-size:10px}.race .links a{font-size:11px}
+@media(min-width:901px) and (max-height:760px){main>section{padding:16px 0}.sh{margin-bottom:14px}.sh h2{font-size:32px}.hero .avatar{width:88px;height:88px}.hero h1{font-size:44px}.hero .eyebrow{margin-top:10px}.hero p{font-size:14px}.art{height:100px}.research-group{padding:14px}.group-heading{padding-bottom:10px;margin-bottom:10px}.group-heading h3{font-size:25px}.paper h4{font-size:18px}.pb{padding:13px}.pv{padding:10px 13px}.race-video{max-height:170px}.stats b{font-size:25px}.race{padding:15px}.race p{font-size:12px}.race .stats{margin-bottom:10px}}
+@media(max-width:900px){html{scroll-snap-type:none}.rgrid{grid-template-columns:1fr;max-width:780px}.rc{grid-template-columns:1fr;max-width:650px}main>section{padding:32px 0}.hero{padding:32px 22px}.race-video{max-height:none}.race p{font-size:14px}.paper p{font-size:14px}.group-1 .group-papers{grid-template-columns:1fr}.research-group{padding:16px}}
+@media(max-width:540px){header{gap:10px;padding:10px 16px;justify-content:center}.brand{font-size:18px}.brand span{display:none}nav{width:100%;justify-content:center}nav a{padding:6px 12px;font-size:12px}.group-papers{grid-template-columns:1fr}.rgrid,.rc{padding:0 16px}.stage{--w:82vw}.body{padding:16px}.slide p{font-size:13px}.slide h3{font-size:23px}.art{height:120px}.hero h1{font-size:40px}.hero .avatar{width:100px;height:100px}.nb{width:32px;height:32px}.prev{left:3px}.next{right:3px}}
+@media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
+
+/* Restore the type sizes from the user's November 11 source. */
+#about h1{font-size:clamp(36px,6vw,62px)}#about p{font-size:15px}#projects .sh h2{font-size:clamp(30px,4vw,40px)}#projects .slide h3{font-size:26px}#projects .slide p{font-size:14px;line-height:1.7}
+/* Racing: equal metric columns, consistent spacing and aligned rows. */
+.rc{gap:24px;max-width:1180px}.race{padding:22px;border-radius:20px}.race.f{border-color:var(--line)}.race>.field{min-height:32px;margin:0;font-size:10px;line-height:1.5;letter-spacing:1.3px}.race h3{font-size:30px;margin:4px 0 18px}.race .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 0 20px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.race .stats>div{min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0 8px;gap:8px}.race .stats>div+div{border-left:1px solid var(--line)}.race .stats b{font:500 clamp(25px,2.6vw,34px)/1 var(--serif);letter-spacing:-.7px;white-space:nowrap}.race .stats span{font-size:9px;line-height:1.5;letter-spacing:.8px;max-width:135px;min-height:27px}.race-video{border-radius:10px;margin:0 0 18px;max-height:clamp(150px,22svh,220px)}.race p{font-size:13px;line-height:1.7;margin-bottom:16px}.race>.meta{border-top:1px solid var(--line);padding-top:12px;margin-bottom:10px}.race>.links{gap:8px 18px}.race>.links a{font-size:12px}
+@media(min-width:901px) and (max-height:800px){.race{padding:16px 20px}.race h3{font-size:27px;margin-bottom:12px}.race .stats{padding:12px 0;margin-bottom:14px}.race .stats b{font-size:28px}.race-video{max-height:155px;margin-bottom:12px}.race p{font-size:13px;line-height:1.6;margin-bottom:12px}.race>.meta{padding-top:9px}}
+@media(max-width:900px){.race-video{max-height:none}.race .stats b{font-size:32px}.race>.field{min-height:0}.rc{gap:20px}}
+@media(max-width:540px){.race{padding:18px}.race .stats b{font-size:26px}.race .stats span{font-size:8px;letter-spacing:.5px}.race .stats>div{padding:0 5px}.race .stats{margin-bottom:16px}.race h3{font-size:28px}}
+@media(min-width:901px) and (max-height:800px){#projects .art{height:92px}.race>.field{min-height:20px}.race-video{max-height:143px}}
+
+/* Selected research covers: elderly-1, student-1, green-1. */
+.research-cover{height:120px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--tint)}.research-cover img{display:block;width:100%;height:100%;object-fit:contain}.paper .pv{gap:6px;padding:10px 16px}@media(min-width:901px) and (max-height:800px){.research-cover{height:68px}.paper .pv{padding:8px 13px}}@media(max-width:900px){.research-cover{height:150px}}
+
+/* Research: stacked themes, full original descriptions. */
+#research{min-height:calc(100svh - var(--header-height));padding:48px 0;scroll-snap-align:start}.rgrid{grid-template-columns:minmax(0,1fr);gap:28px;max-width:1120px}.research-group{padding:24px}.group-heading{padding-bottom:18px;margin-bottom:18px}.group-heading h3{font-size:30px}.group-heading p{font-size:12px}.group-papers{gap:20px}.research-cover{height:140px}.paper .pv{padding:12px 20px}.pb{padding:22px}.paper h4{font-size:23px}.paper p{font-size:14px;line-height:1.8;margin-bottom:22px}.citation{font-size:11px}.group-1 .group-papers{grid-template-columns:1fr}.group-1 .paper{display:grid;grid-template-columns:240px minmax(0,1fr);grid-template-rows:auto 1fr}.group-1 .research-cover{height:100%;grid-row:1 / 3;min-height:250px}.group-1 .research-cover img{height:auto;max-height:230px}.group-1 .pv{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between}.group-1 .pb{grid-column:2}.race .stats{border-top:0;border-bottom:0}.race .stats>div+div{border-left:1px solid var(--line)}
+/* Ragged-right English text keeps word spacing even in narrow cards. */
+.hero p,.slide p,.paper p,.race p{text-align:left;hyphens:none;text-wrap:pretty}.hero p{max-width:620px}.slide p,.race p{line-height:1.75}
+@media(max-width:700px){.group-papers{grid-template-columns:1fr}.research-group{padding:16px}.group-1 .paper{display:flex}.group-1 .research-cover{height:150px;min-height:0}.group-1 .research-cover img{height:100%}.group-1 .pv{align-items:flex-start;flex-direction:column}.pb{padding:18px}.paper h4{font-size:22px}#research{padding:32px 0}}
 </style>
-<meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 <body>
 <a class="skip" href="#about">Skip to content</a>
-<header class="site-header">
-<a class="brand" href="#about">Levia Zeng<span>BUSINESS ANALYTICS</span>
-</a>
-<nav aria-label="Main navigation">
-<a href="#about">About me</a>
-<a href="#projects">Projects</a>
-<a href="#research">Research</a>
-<a href="#racing">Racing</a>
-</nav>
-</header>
+<header><a class="brand" href="#about">Levia Zeng<span>BUSINESS ANALYTICS</span></a>
+<nav aria-label="Main navigation"><a href="#about">About me</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#racing">Racing</a></nav></header>
 <main>
-
-<!-- ===== ABOUT ME / 个人介绍：在这里修改文字和链接 ===== -->
-<section id="about" class="about">
-<div>
+<!-- ===== ABOUT ME ===== -->
+<section id="about" class="hero">
+<img class="avatar" src="assets/levia-portrait.jpg" alt="Levia Zeng seated beside stained-glass windows" width="124" height="124" fetchpriority="high">
+<div class="cap">LEVIA ZENG<span>ANALYTICS · RESEARCH · RACING</span>
+</div>
 <div class="eyebrow">01 / ABOUT ME</div>
 <h1>Hi, I’m Levia.<br>
 <em>From Data to Insights.</em>
 </h1>
 <p>I’m a Master of Business Analytics student at UBC Sauder, with a background in International Business and International Finance. I turn data into decisions through market research, financial modeling, and published research, and I’m looking for Business Analyst and Data Analyst roles.</p>
 <div class="contact-icons">
-<a class="contact-icon" href="https://www.linkedin.com/in/qiaotong-zeng" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.75 9.75h3.8v1.6h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.63 4.74 6.05V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg></a>
-<a class="contact-icon" href="mailto:zengqiaotong@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6.5L21 7"/></svg></a>
-<a class="contact-icon" href="tel:+16049089534" aria-label="Phone" title="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3h3l1.4 4.2-2 1.4a12 12 0 0 0 5.4 5.4l1.4-2 4.2 1.4v3A2.6 2.6 0 0 1 17.4 19 14.4 14.4 0 0 1 5 6.6 2.6 2.6 0 0 1 6.6 3z"/></svg></a>
+<a class="contact-icon" href="https://www.linkedin.com/in/qiaotong-zeng" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4V21H3zM9.75 9.75h3.8v1.6h.06c.53-1 1.82-2.06 3.75-2.06 4 0 4.74 2.63 4.74 6.05V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"></path></svg></a>
+<a class="contact-icon" href="mailto:zengqiaotong@gmail.com" aria-label="Email" title="Email"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"></path><path d="m3 7 9 6.5L21 7"></path></svg></a>
+<a class="contact-icon" href="tel:+16049089534" aria-label="Phone" title="Phone"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3h3l1.4 4.2-2 1.4a12 12 0 0 0 5.4 5.4l1.4-2 4.2 1.4v3A2.6 2.6 0 0 1 17.4 19 14.4 14.4 0 0 1 5 6.6 2.6 2.6 0 0 1 6.6 3z"></path></svg></a>
 </div>
 <div class="skills">Python · R · Stata · SPSS · Tableau · Excel</div>
 <div class="about-meta">VANCOUVER · UBC SAUDER MBAN ’27</div>
-</div>
-<figure class="portrait"><img src="assets/levia-portrait.jpg" alt="Levia Zeng seated beside stained-glass windows" width="1440" height="810" fetchpriority="high"><figcaption>LEVIA ZENG <span>ANALYTICS · RESEARCH · RACING</span></figcaption></figure></section>
-
-<!-- ===== PROJECTS / 项目卡片：在这里修改文字和链接 ===== -->
-<section id="projects">
-<div class="section-heading">
-<span>02 /</span>
-<h2>Projects</h2>
+</section>
+<!-- ===== PROJECTS（轮播）===== -->
+<section id="projects" role="region" aria-roledescription="carousel" aria-label="Projects">
+<div class="sh">
+<span>02 /</span><h2>Projects</h2>
 <p>Ideas, explored through practice.</p>
 </div>
-<div class="project-grid">
-<article class="card">
+<div class="wrap">
+<button class="nb prev" type="button" aria-label="Previous project">←</button><div class="stage" aria-live="polite">
+<article class="slide" data-title="NYC’s Hidden Rat Hotspots"><div class="art"><img src="illustrations/nyc-1.svg" alt="A little mouse investigating the city" loading="lazy" width="300" height="230"></div>
+<div class="body">
 <div class="field">Data Visualization · Tableau</div>
-<div class="card-art project-doodle">
-<img src="illustrations/nyc-1.svg" alt="A little mouse investigating the city" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
 <h3>NYC’s Hidden Rat Hotspots</h3>
 <p>Team project in Tableau analyzing 311 rodent complaints and rat inspections across NYC’s 59 community districts, 2022–2025. Complaints don’t point to the rats: 12 districts are hidden hotspots, and Queens has 27% of residents but only 5.5% of inspections. I built the Queens and Mitigation Zones visualizations.</p>
-<div class="card-bottom">
-<span class="meta">UBC Sauder · 2026</span>
-<div class="links">
+<div class="bottom">
+<span class="meta">UBC Sauder · 2026</span><div class="links">
 <a href="nyc/NYC_Rats_1_Opening.html">Explore story <span aria-hidden="true">↗</span>
 </a>
 <a href="nyc/NYC_Rats_2_Chart_Builds.html">View charts <span aria-hidden="true">↗</span>
@@ -886,183 +161,170 @@ footer {
 </a>
 </div>
 </div>
-</div>
-</article>
-<article class="card"><div class="field">Python · Financial Analytics &amp; NLP</div>
-<div class="card-art project-doodle">
-<img src="illustrations/python-3.svg" alt="A laptop, financial chart, and friendly data point" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
+</div></article>
+<article class="slide" data-title="Business Services Industry Analysis"><div class="art"><img src="illustrations/python-3.svg" alt="A laptop, financial chart, and friendly data point" loading="lazy" width="300" height="230"></div>
+<div class="body">
+<div class="field">Python · Financial Analytics &amp; NLP</div>
 <h3>Business Services Industry Analysis</h3>
 <p>Group project in Python on Business Services firms (SIC 73): 3,273 firms and 30,610 firm-years from 1994 to 2025, plus text analysis of 10-K disclosures. I selected the industry and handled the financial benchmarking: price and sales rankings, geography, and price and ROA trends. The team’s Microsoft peer analysis found assets growing faster than revenue since 2022, with ROA slipping from 19.9% to 16.5%.</p>
-<div class="card-bottom">
+<div class="bottom">
 <span class="meta">UBC Sauder · Business Analytics Programming</span><div class="links"><a href="documents/business-services-report-final.pdf" target="_blank" rel="noopener">Read project report <span aria-hidden="true">↗</span></a></div>
 </div>
-</div></article><article class="card">
+</div></article>
+<article class="slide" data-title="Deep Sky One"><div class="art"><img src="illustrations/deepsky-1.svg" alt="A smiling cloud above carbon storage" loading="lazy" width="300" height="230"></div>
+<div class="body">
 <div class="field">Financial Modeling · Excel</div>
-<div class="card-art project-doodle">
-<img src="illustrations/deepsky-1.svg" alt="A smiling cloud above carbon storage" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
 <h3>Deep Sky One</h3>
 <p>Built the project-finance model for Deep Sky One, a carbon-removal project. I estimated its cost of capital (comparable-company beta, CAPM, WACC), valued cash flows with NPV, and structured an SPV to size the financing needed.</p>
-<div class="card-bottom">
-<span class="meta">Climate Innovation Challenge · DeepSky &amp; PwC · 2026</span>
-<div class="links">
-<a href="documents/deep-sky-model.xlsx" target="_blank" rel="noopener">View model <span aria-hidden="true">↗</span>
-</a>
+<div class="bottom">
+<span class="meta">Climate Innovation Challenge · DeepSky &amp; PwC · 2026</span><div class="links"><a href="documents/deep-sky-model.xlsx" target="_blank" rel="noopener">View model <span aria-hidden="true">↗</span>
+</a></div>
 </div>
-</div>
-</div>
-</article>
-<article class="card">
+</div></article>
+<article class="slide" data-title="Cesim Elite"><div class="art"><img src="illustrations/cesim-2.svg" alt="A dashboard for business decisions" loading="lazy" width="300" height="230"></div>
+<div class="body">
 <div class="field">Business Strategy &amp; Analytics</div>
-<div class="card-art project-doodle">
-<img src="illustrations/cesim-2.svg" alt="A dashboard for business decisions" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
 <h3>Cesim Elite</h3>
 <p>Served as the team analyst in a national-finals business simulation, turning market and competitor data into decisions and presenting our strategy and results.</p>
-<div class="card-bottom">
-<span class="meta">16th Cesim Elite National Finals · Second Prize · 2024</span>
-<div class="links">
+<div class="bottom">
+<span class="meta">16th Cesim Elite National Finals · Second Prize · 2024</span><div class="links"></div>
 </div>
-</div>
-</div>
-</article>
-<article class="card">
+</div></article>
+<article class="slide" data-title="L’Oréal Brandstorm · Comb Pro"><div class="art"><img src="illustrations/loreal-1.svg" alt="A smiling smart hairbrush" loading="lazy" width="300" height="230"></div>
+<div class="body">
 <div class="field">Marketing &amp; Consumer Insights</div>
-<div class="card-art project-doodle">
-<img src="illustrations/loreal-1.svg" alt="A smiling smart hairbrush" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
 <h3>L’Oréal Brandstorm · Comb Pro</h3>
 <p>Responsible for the market analysis behind Comb Pro, a connected hair-care concept pitched at L’Oréal Brandstorm, covering consumer needs and market positioning.</p>
-<div class="card-bottom">
-<span class="meta">Mainland China Top 200 · 2024</span>
-<div class="links">
+<div class="bottom">
+<span class="meta">Mainland China Top 200 · 2024</span><div class="links">
 <a href="documents/comb-pro.pdf" target="_blank" rel="noopener">View concept <span aria-hidden="true">↗</span>
 </a>
 <a href="https://youtu.be/FNUZM60wHyg" target="_blank" rel="noopener">Watch pitch <span aria-hidden="true">↗</span>
 </a>
 </div>
 </div>
-</div>
-</article>
-<article class="card">
+</div></article>
+<article class="slide" data-title="Momentum in Tennis"><div class="art"><img src="illustrations/mcm-1.svg" alt="A tennis racket and cheerful tennis ball" loading="lazy" width="300" height="230"></div>
+<div class="body">
 <div class="field">Mathematical Modeling</div>
-<div class="card-art project-doodle">
-<img src="illustrations/mcm-1.svg" alt="A tennis racket and cheerful tennis ball" loading="lazy" width="300" height="230">
-</div>
-<div class="card-body">
 <h3>Momentum in Tennis</h3>
 <p>Built a momentum model for tennis matches in the Mathematical Contest in Modeling, quantifying which player holds the advantage and comparing modeling approaches. I was responsible for the modeling, visualizations, and the paper.</p>
-<div class="card-bottom">
-<span class="meta">MCM · Honorable Mention · 2024</span>
-<div class="links">
-<a href="documents/tennis-paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span>
-</a>
+<div class="bottom">
+<span class="meta">MCM · Honorable Mention · 2024</span><div class="links"><a href="documents/tennis-paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span>
+</a></div>
 </div>
-</div>
-</div>
-</article>
-</div>
-</section>
-
-<!-- ===== RESEARCH / 期刊链接：在这里修改文字和链接 ===== -->
-<section id="research">
-<div class="section-heading">
-<span>03 /</span>
-<h2>Research</h2>
-</div>
-<div class="research-topics">
-<div class="research-topic">
-<div class="topic-heading">
-<span class="topic-number">01</span><h3>Time banking &amp; participation</h3>
-<span class="topic-caption">From elderly care to student volunteering</span>
-</div>
-<div class="research-pair">
-<article class="research-paper"><div class="paper-top">
-<span class="field">Social Research · Elderly Care</span><span class="status published">Published</span>
-</div>
-<h4>Participation in Elderly-Care Time Banks</h4>
-<p>Co-authored a survey study of 422 villagers in rural Guangdong, using correlation and multiple regression analysis to identify what drives willingness to join a time bank. Life satisfaction, life evaluation, and understanding of the program’s risks mattered; trust and views of the village did not. I handled the data processing and modeling analysis. Published in <em>Social Governance Review (社会治理)</em>.</p>
-<span class="citation">Wei, Wu &amp; Zeng · 2024 · Issue 4, pp. 63–79</span><div class="links"><a href="https://doi.org/10.16775/j.cnki.10-1285/d.2024.04.006" target="_blank" rel="noopener">Read journal article <span aria-hidden="true">↗</span></a></div></article>
-<article class="research-paper"><div class="paper-top">
-<span class="field">Social Research · Student Volunteering</span><span class="status">Under review</span>
-</div>
-<h4>College Students’ Participation in Time Banking</h4>
-<p>A follow-up to the rural study. Co-authored a survey of 628 college students on willingness to join time-bank volunteering, using factor analysis, multiple regression, and logistic regression across individual, family, social, and service levels. I handled the data processing and modeling analysis.</p>
-<span class="citation">Co-author · Continuing the time-banking research</span><div class="links"><a href="mailto:zengqiaotong@gmail.com?subject=Manuscript%20request%3A%20student%20time-bank%20study">Manuscript on request <span aria-hidden="true">↗</span></a></div></article>
-</div>
-</div>
-<div class="research-topic">
-<div class="topic-heading">
-<span class="topic-number">02</span><h3>Green finance &amp; economic growth</h3>
-</div>
-<article class="research-paper green-paper"><div>
-<div class="paper-top">
-<span class="field">Green Finance · Machine Learning</span><span class="status">Under review</span>
-</div>
-<h4>Green Technology, Green Finance &amp; GDP</h4>
-<p>Co-authored a study of how green technology and green finance relate to provincial GDP, using 880 province-year observations (31 provinces, 1992–2023). We compared five regression and machine-learning models and built a rule that matches the best model to each indicator set; using both factors together predicted GDP markedly better than either alone. I handled the data processing and modeling analysis.</p>
-<span class="citation">Co-author · A Study on the Adaptive Relationship Between Green Technology, Green Finance, and GDP</span>
-<div class="links"><a href="mailto:zengqiaotong@gmail.com?subject=Manuscript%20request%3A%20green%20finance%20study">Manuscript on request <span aria-hidden="true">↗</span></a></div>
-</div>
-<div class="research-symbol" aria-hidden="true">
-<span>Technology</span><b>×</b><span>Finance</span><i>Economic growth</i>
 </div></article>
 </div>
-</div></section>
-
-<!-- ===== RACING / Formula 与 Baja：在这里修改文字和链接 ===== -->
+<button class="nb next" type="button" aria-label="Next project">→</button>
+</div>
+<div class="dots"></div>
+<div class="count"></div>
+</section>
+<!-- ===== RESEARCH ===== -->
+<section id="research">
+<div class="sh">
+<span>03 /</span><h2>Research</h2>
+</div>
+<div class="rgrid">
+<div class="research-group group-0" aria-labelledby="topic-0">
+<div class="group-heading">
+<span class="group-number">01 / RESEARCH THEME</span><h3 id="topic-0">Time Banking</h3>
+<p>Two connected studies · Elderly care → Student volunteering</p>
+</div>
+<div class="group-papers">
+<article class="paper"><div class="research-cover"><img src="research-illustrations/elderly-1.svg" alt="A clock above a home with a heart, representing elderly-care time banking" width="300" height="230" loading="lazy"></div>
+<div class="pv">
+<span class="field">Social Research · Elderly Care</span><span class="status published">Published</span>
+</div>
+<div class="pb">
+<h4>Participation in Elderly-Care Time Banks</h4>
+<p>Co-authored a survey study of 422 villagers in rural Guangdong, using correlation and multiple regression analysis to identify what drives willingness to join a time bank. Life satisfaction, life evaluation, and understanding of the program’s risks mattered; trust and views of the village did not. I handled the data processing and modeling analysis. Published in <em>Social Governance Review (社会治理)</em>.</p>
+<span class="citation">Wei, Wu &amp; Zeng · 2024 · Issue 4, pp. 63–79</span><div class="links">
+<a href="https://doi.org/10.16775/j.cnki.10-1285/d.2024.04.006" target="_blank" rel="noopener">Read journal article <span aria-hidden="true">↗</span></a>
+</div>
+</div></article><article class="paper"><div class="research-cover"><img src="research-illustrations/student-1.svg" alt="A clock above a home with a graduation cap, representing student time-bank volunteering" width="300" height="230" loading="lazy"></div>
+<div class="pv">
+<span class="field">Social Research · Student Volunteering</span><span class="status">Under review</span>
+</div>
+<div class="pb">
+<h4>College Students’ Participation in Time Banking</h4>
+<p>A follow-up to the rural study. Co-authored a survey of 628 college students on willingness to join time-bank volunteering, using factor analysis, multiple regression, and logistic regression across individual, family, social, and service levels. I handled the data processing and modeling analysis.</p>
+<span class="citation">Co-author · Continuing the time-banking research</span><div class="links">
+<a href="mailto:zengqiaotong@gmail.com?subject=Manuscript%20request%3A%20student%20time-bank%20study">Manuscript on request <span aria-hidden="true">↗</span></a>
+</div>
+</div></article>
+</div>
+</div>
+<div class="research-group group-1" aria-labelledby="topic-1">
+<div class="group-heading">
+<span class="group-number">02 / RESEARCH THEME</span><h3 id="topic-1">Green Finance</h3>
+<p>An independent research topic</p>
+</div>
+<div class="group-papers"><article class="paper"><div class="research-cover"><img src="research-illustrations/green-1.svg" alt="A smiling savings jar growing a leaf, representing green finance" width="300" height="230" loading="lazy"></div>
+<div class="pv">
+<span class="field">Green Finance · Machine Learning</span><span class="status">Under review</span>
+</div>
+<div class="pb">
+<h4>Green Technology, Green Finance &amp; GDP</h4>
+<p>Co-authored a study of how green technology and green finance relate to provincial GDP, using 880 province-year observations (31 provinces, 1992–2023). We compared five regression and machine-learning models and built a rule that matches the best model to each indicator set; using both factors together predicted GDP markedly better than either alone. I handled the data processing and modeling analysis.</p>
+<span class="citation">Co-author · A Study on the Adaptive Relationship Between Green Technology, Green Finance, and GDP</span><div class="links">
+<a href="mailto:zengqiaotong@gmail.com?subject=Manuscript%20request%3A%20green%20finance%20study">Manuscript on request <span aria-hidden="true">↗</span></a>
+</div>
+</div></article></div>
+</div>
+</div>
+</section>
+<!-- ===== RACING ===== -->
 <section id="racing">
-<div class="section-heading">
-<span>04 /</span>
-<h2>Racing</h2>
+<div class="sh">
+<span>04 /</span><h2>Racing</h2>
 <p>Business behind the team · 2022–2026</p>
 </div>
-<div class="racing-grid">
-<article class="card racing-card">
-<div class="field">Formula Student · Operations &amp; Sponsorship</div>
+<div class="rc">
+<article class="race f"><div class="field">Formula Student · Operations &amp; Sponsorship</div>
+<h3>Formula Racing</h3>
+<div class="stats">
+<div>
+<b>500K+</b><span>Sponsorship · CNY</span>
+</div>
+<div>
+<b>10,000+</b><span>Followers</span>
+</div>
+<div>
+<b>2nd</b><span>Formula Student China</span>
+</div>
+</div>
 <div class="race-video" data-yt="KgduNsOoL5A" data-title="Formula Student — Spain track run">
 <button class="yt-play" type="button" aria-label="Play video: Formula Student — Spain track run"><img src="https://i.ytimg.com/vi/KgduNsOoL5A/hqdefault.jpg" alt="" loading="lazy"><span class="yt-icon" aria-hidden="true">▶</span></button>
 </div>
-<div class="card-body">
-<h3>Formula</h3>
 <p>As Operations Director, I secured CNY 500K+ in sponsorship and managed commercial projects, business competitions, and exhibitions. I also led social media and visual content, producing 100+ posts and growing an audience of 10,000+ followers.</p>
-<div class="card-bottom">
-<span class="meta">Formula Student China · 2nd Place · Represented China in Spain</span>
-<div class="links">
-<a href="https://youtu.be/KgduNsOoL5A" target="_blank" rel="noopener">Watch Spain track run <span aria-hidden="true">↗</span>
-</a>
+<span class="meta">Formula Student China · 2nd Place · Represented China in Spain</span><div class="links">
 <a href="https://aurora-racing.com" target="_blank" rel="noopener">Team website <span aria-hidden="true">↗</span>
 </a>
 <a href="https://www.instagram.com/_auroraracing" target="_blank" rel="noopener">Instagram <span aria-hidden="true">↗</span>
 </a>
+</div></article>
+<article class="race"><div class="field">Baja SAE · Business, Media &amp; Outreach</div>
+<h3>Baja Racing</h3>
+<div class="stats">
+<div>
+<b>50+</b><span>Outreach activities</span>
+</div>
+<div>
+<b>5,000+</b><span>Students reached</span>
+</div>
+<div>
+<b>3rd</b><span>Baja SAE China</span>
 </div>
 </div>
-</div>
-</article>
-<article class="card racing-card">
-<div class="field">Baja SAE · Business, Media &amp; Outreach</div>
 <div class="race-video" data-yt="ZI6aikkppJc" data-title="Baja — track run">
 <button class="yt-play" type="button" aria-label="Play video: Baja — track run"><img src="https://i.ytimg.com/vi/ZI6aikkppJc/hqdefault.jpg" alt="" loading="lazy"><span class="yt-icon" aria-hidden="true">▶</span></button>
 </div>
-<div class="card-body">
-<h3>Baja</h3>
 <p>I developed Hurricane’s 2023 business plan and served as Baja News Officer in 2024. I also organized community and school outreach, with 50+ activities reaching 5,000+ students.</p>
-<div class="card-bottom">
-<span class="meta">Baja SAE China · 3rd Place · Represented China in Korea</span>
-<div class="links">
-<a href="https://youtu.be/ZI6aikkppJc" target="_blank" rel="noopener">Watch Baja <span aria-hidden="true">↗</span>
+<span class="meta">Baja SAE China · 3rd Place · Represented China in Korea</span><div class="links">
+<a href="https://youtu.be/tW2TpuYYLtg" target="_blank" rel="noopener">Lap Time Trial <span aria-hidden="true">↗</span>
 </a>
-<a href="https://youtu.be/tW2TpuYYLtg" target="_blank" rel="noopener">Team film <span aria-hidden="true">↗</span>
-</a>
-</div>
-</div>
-</div>
-</article>
+</div></article>
 </div>
 </section>
 </main>
@@ -1075,24 +337,29 @@ footer {
 </div>
 </footer>
 <script>
-/* 点击播放 YouTube：本地直接双击打开 html（file://）时 YouTube 会拒绝嵌入，所以会改为显示链接 */
-document.querySelectorAll('[data-yt]').forEach(function (box) {
-  var id = box.dataset.yt;
-  box.querySelector('.yt-play').addEventListener('click', function () {
-    if (location.protocol === 'file:') {
-      box.innerHTML = '<div class="local-video-note"><strong>Video can’t play from a local file.</strong>It plays on the published site, or <a href="https://youtu.be/' + id + '" target="_blank" rel="noopener">watch on YouTube ↗</a>.</div>';
-      return;
-    }
-    var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&playsinline=1&rel=0';
-    f.title = box.dataset.title;
-    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    f.allowFullscreen = true;
-    f.referrerPolicy = 'strict-origin-when-cross-origin';
-    box.innerHTML = '';
-    box.appendChild(f);
-  });
-});
+(function(){
+var st=document.querySelector('.stage'),sl=[].slice.call(st.children),n=sl.length,i=0,x0=null,dots=document.querySelector('.dots'),cnt=document.querySelector('.count'),wrap=document.querySelector('.wrap');
+sl.forEach(function(s,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show project '+(k+1)+': '+s.dataset.title);b.onclick=function(){go(k)};dots.appendChild(b);s.addEventListener('click',function(){if(s.dataset.pos!=='0')go(k)})});
+function go(k){i=(k+n)%n;
+ sl.forEach(function(s,j){var d=(j-i+n)%n,p=d===0?0:d===1?1:d===n-1?-1:9;s.dataset.pos=p;s.setAttribute('aria-hidden',p===0?'false':'true');[].forEach.call(s.querySelectorAll('a'),function(a){a.tabIndex=p===0?0:-1})});
+ [].forEach.call(dots.children,function(b,j){b.setAttribute('aria-current',j===i)});cnt.textContent=(i+1)+' / '+n}
+document.querySelector('.prev').onclick=function(){go(i-1)};document.querySelector('.next').onclick=function(){go(i+1)};
+document.getElementById('projects').addEventListener('keydown',function(e){if(e.key==='ArrowLeft')go(i-1);if(e.key==='ArrowRight')go(i+1)});
+wrap.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+wrap.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(d)>40)go(i+(d<0?1:-1))});
+go(0);
+var links=[].slice.call(document.querySelectorAll('nav a'));
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-40% 0px -55% 0px'});
+['about','projects','research','racing'].forEach(function(id){io.observe(document.getElementById(id))})}
+})();
+document.querySelectorAll('[data-yt]').forEach(function(box){var id=box.dataset.yt;box.querySelector('.yt-play').addEventListener('click',function(){
+ if(location.protocol==='file:'){box.innerHTML='<div class="local-video-note"><strong>Video can’t play from a local file.</strong>It plays on the published site, or <a href="https://youtu.be/'+id+'" target="_blank" rel="noopener">watch on YouTube ↗</a>.</div>';return}
+ var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&playsinline=1&rel=0';f.title=box.dataset.title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';box.innerHTML='';box.appendChild(f)})});
+</script>
+<script>
+const siteHeader=document.querySelector('header');
+new ResizeObserver(()=>document.documentElement.style.setProperty('--header-height',siteHeader.getBoundingClientRect().height+'px')).observe(siteHeader);
+document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.dialog).showModal()));
 </script>
 </body>
 </html>
